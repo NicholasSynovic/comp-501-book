@@ -1,0 +1,76 @@
+---
+name: Content Formatting Request
+about: Request edits to prose to conform with style guidelines in a specific section.
+title: 'Formatting: [Brief Description of Change]'
+labels: 'content, formatting, style-guide'
+assignees: ''
+---
+
+## Content Formatting Request
+
+Please use this template to request edits for prose to align with our project's style guide.
+
+### Location of Content
+*To help us find the content quickly, please provide the exact location.*
+
+- **Book:** [e.g., "User Guide", "API Reference"]
+- **Chapter:** [e.g., "Getting Started", "Advanced Features"]
+- **Subchapter:** [e.g., "Installation", "Configuration Options"]
+- **Section/Heading:** [e.g., "Prerequisites", "Troubleshooting Common Issues"]
+- **File Path (if known):** [e.g., `docs/book/01-getting-started/01-installation.md`]
+
+---
+
+### Style Guideline & Requested Change
+*Clearly describe what needs to be changed and why.*
+
+**Style Rule or Guideline:**
+[Specify the style rule being applied. e.g., "Use active voice," "Avoid jargon," "Apply the Oxford comma," "Format user input as inline code."]
+
+**Description of Change:**
+[Provide a clear, plain-English description of the change needed. e.g., "Rewrite these paragraphs to be in the active voice," "Replace technical acronyms with simpler terms," "Ensure all UI element names are bolded."]
+
+---
+
+### Current Content Snippet
+*Paste the exact text that needs to be revised. Please include enough context.*
+
+[Paste the current content here. For example:
+To install the software, the configuration file should be modified by the user. This is typically done by locating the config.yaml file. After that is done, you must execute the start-server command.
+]
+
+---
+
+### Expected / Revised Content Snippet
+*Provide an example of how the content should look after the changes. This is the most helpful part!*
+
+[Paste the revised version here. For example:
+To install the software, modify the config.yaml file. Then, run the start-server command.
+]
+
+---
+
+### Current Content Snippet
+*Paste the exact text that needs to be revised. Please include enough context.*
+
+[Paste the current content here. For example:
+To install the software, the configuration file should be modified by the user. This is typically done by locating the `config.yaml` file. After that is done, you must execute the `start-server` command.
+]
+
+---
+
+### Expected / Revised Content Snippet
+*Provide an example of how the content should look after the changes. This is the most helpful part!*
+
+[Paste the revised version here. For example:
+To install the software, modify the `config.yaml` file. Then, run the `start-server` command.
+]
+
+---
+
+### Additional Context
+*Add any other context, screenshots, or references about the request here.*
+
+- **Link to Style Guide:** [e.g., Link to your project's style guide document]
+- **Related Issues:** [e.g., #123, #456]
+- **Notes:** [Any other relevant information for the author.]
