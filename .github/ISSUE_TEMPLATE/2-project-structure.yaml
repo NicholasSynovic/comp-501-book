@@ -1,0 +1,36 @@
+name: Project Structure
+description: Submit an issue with how the project is structured
+title: "[Project Structure]: "
+labels: ["bug", "project-structure"]
+type: bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue describes a problem with how the current project is
+        strucuted. This can include, but is not limited to, file name
+        conventions, dependency updates, or project configuration changes.
+  - type: input
+    id: file-path
+    attributes:
+      label: Path to file or directory of files that reflect this issue
+      placeholder: ex. src/
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is the issue with this file or directory of files?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: |
+        If there is any log information associated with this issue,
+        please copy and paste any relevant log output. This will be
+        automatically formatted into code, so no need for backticks.
+      render: shell
