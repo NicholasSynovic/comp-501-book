@@ -1,6 +1,6 @@
 name: Editorial Changes
 description: Submit an issue to change the content
-title: "[Project Structure]: "
+title: "[Editorial Change]: "
 labels: ["bug", "content", "editorial"]
 type: editorial
 body:
