@@ -1,6 +1,6 @@
 name: Project Structure
 description: Submit an issue with how the project is structured
-title: "[Project Structure]: "
+title: "[PROJECT STRUCTURE]: "
 labels: ["bug", "project-structure"]
 type: bug
 body:

@@ -1,6 +1,6 @@
 name: reStructuredText (RST) Technical Correctness
 description: Submit an issue with how the content is presented via RST.
-title: "[Content RST]: "
+title: "[CONTENT RST]: "
 labels: ["bug", "content", "rst"]
 type: bug
 body:
