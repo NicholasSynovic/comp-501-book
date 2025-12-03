@@ -1,0 +1,35 @@
+name: reStructuredText (RST) Technical Correctness
+description: Submit an issue with how the content is presented via RST.
+title: "[CONTENT RST]: "
+labels: ["bug", "content", "rst"]
+type: bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue describes a problem with how the current content is written
+        in RST. This does not include the content itself; for that submit an
+        Editoral Change issue. This issue covers RST implementation of content
+        including title, admonations, images, and tables.
+  - type: input
+    id: file-path
+    attributes:
+      label: Path to file or directory of files that reflect this issue
+      placeholder: ex. src/
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is the issue with this file or directory of files?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: documentation
+    attributes:
+      label: Relevant reStructuredText Documentation
+      description: |
+        Please post the relevant RST documentation that best applies
+        to your issue. You can find the documentation [here](https://www.docutils.org/docs/ref/rst/restructuredtext.html).

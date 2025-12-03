@@ -1,0 +1,25 @@
+name: Editorial Changes
+description: Submit an issue to change the content
+title: "[EDITORIAL CHANGE]: "
+labels: ["bug", "content", "editorial"]
+type: editorial
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue describes a change with the current content of the project.
+  - type: input
+    id: file-path
+    attributes:
+      label: Path to file or directory of files that reflect this issue
+      placeholder: ex. src/
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What changes would you like to see?
+      description: Also tell us, what did you expect to happen?
+      placeholder: Tell us what you see!
+    validations:
+      required: true
