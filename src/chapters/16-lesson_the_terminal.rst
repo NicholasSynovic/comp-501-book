@@ -1,5 +1,6 @@
+========================
 Lesson 16: The Terminal
-=======================
+========================
 
 Owner: Nazari, Mujtaba
 
@@ -1010,12 +1011,12 @@ Continuing the Example: Exit Codes
 
 .. code:: python
 
-   print("Success! Exiting with code 0")  
+   print("Success! Exiting with code 0")
    sys.exit(0)
 
 .. code:: python
 
-   print("Failure! Exiting with code 1")  
+   print("Failure! Exiting with code 1")
    sys.exit(1)
 
 Each time you run the program, Python starts fresh and asks for new

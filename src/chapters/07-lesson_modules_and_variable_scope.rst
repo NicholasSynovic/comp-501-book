@@ -1,5 +1,6 @@
+===================================
 Lesson 7: Modules & Variable Scope
-==================================
+===================================
 
 **Reviewer:** (NM Nazari, Mujtaba) - I am not sure how we can put these
 two concepts beside each other. Teaching the variable in the basic

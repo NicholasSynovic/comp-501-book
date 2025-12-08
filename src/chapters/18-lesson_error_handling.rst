@@ -1,5 +1,6 @@
+==========================
 Lesson 18: Error Handling
-=========================
+==========================
 
 | Reviewer: Mujtaba - I like the contents that will be covered under
   this section. The only thing that I am not sure is that the error

@@ -1,7 +1,7 @@
-Lesson 14: More Practice with
-=============================
-
-For Loops Owner: Hyatt, Matt
+========================================
+Lesson 14: More Practice with For Loops
+========================================
+Owner: Hyatt, Matt
 
 - Nested loops
 - Loop patterns

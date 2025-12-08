@@ -1,5 +1,6 @@
+=====================================
 Lesson 24: Introduction to Recursion
-====================================
+=====================================
 
 | Owner: Saban, Michael
 | Reviewer: Jason for Saban, Michael

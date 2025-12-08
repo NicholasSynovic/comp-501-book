@@ -1,10 +1,13 @@
+==================================
+Lesson 20: Dictionaries in Python
+==================================
+
 | • Owner: Nazari, Mujtaba
 | • Reviewer: Eslami, Behnaz
 | • Dictionary basics
 | • Key-value pairs
 | • Dictionary methods
 
-| Dictionaries in Python
 | Learning Objectives
 | By the end of this chapter, you will be able to:
 | 1. Define what a dictionary is and explain the key -value pair
@@ -372,12 +375,12 @@ good_dict = {“name”: “Alice”}
 
 ::
 
-   # Optional fields - use get() with defaults  
-   gpa = student.get("gpa", "N/A")  
-   print(f"GPA: {gpa}")  
-    
-   email = student.get("email", "Not provided")  
-   print(f"Email: {email}")  
+   # Optional fields - use get() with defaults
+   gpa = student.get("gpa", "N/A")
+   print(f"GPA: {gpa}")
+
+   email = student.get("email", "Not provided")
+   print(f"Email: {email}")
 
 | Checking if a Key Exists
 | Sometimes you want to check whether a key exists before trying to
@@ -748,7 +751,7 @@ Invalid - tuple contains a mutable element (a list)
 
 ::
 
-   "email": "alice@example.com"  
+   "email": "alice@example.com"
 
 | } Sometimes you’ll use numbers, particularly when mapping IDs to
   information:
@@ -779,10 +782,10 @@ print(grid[(1, 0)]) # right
 
 ::
 
-   "name": "Alice",  
-   "age": 20,  
-   "major": "Computer Science",  
-   "gpa": 3.8  
+   "name": "Alice",
+   "age": 20,
+   "major": "Computer Science",
+   "gpa": 3.8
 
 }
 
@@ -899,9 +902,9 @@ print(grid[(1, 0)]) # right
 
 ::
 
-       letter = "C"  
-    
-   print(f"{student_name}: {grade} ({letter})")  
+       letter = "C"
+
+   print(f"{student_name}: {grade} ({letter})")
 
 | Like keys() and values(), you can convert the items view to a list:
 | items_list = list(student.items())
@@ -967,7 +970,7 @@ Add multiple items at once
 
 ::
 
-   "age": 20  
+   "age": 20
 
 }
 
@@ -1096,8 +1099,8 @@ dictionary
 
 ::
 
-   {"name": "Bob", "age": 22, "major": "Math"},  
-   {"name": "Charlie", "age": 21, "major": "Physics"}  
+   {"name": "Bob", "age": 22, "major": "Math"},
+   {"name": "Charlie", "age": 21, "major": "Physics"}
 
 ]
 
@@ -1129,7 +1132,7 @@ Access first student’s name
 
 ::
 
-   "city": "New York"  
+   "city": "New York"
 
 | } print(f”City: {location[‘city’]}“)
   Dictionaries are more flexible and self -documenting, while tuples are
@@ -1209,16 +1212,16 @@ Add grades as they’re recorded
 
 ::
 
-   while True:  
-       name = input("Enter student name (or 'done' to finish): ")  
-       if name.lower() == 'done':  
-           break  
-        
-       grade = int(input(f"Enter grade for {name}: "))  
-       grades[name] = grade  
-    
+   while True:
+       name = input("Enter student name (or 'done' to finish): ")
+       if name.lower() == 'done':
+           break
 
-   return grades  
+       grade = int(input(f"Enter grade for {name}: "))
+       grades[name] = grade
+
+
+   return grades
 
 | Using Default Values Effectively
 | When you’re not sure if a key exists, using get() with a default value
@@ -1245,9 +1248,9 @@ With default - cleaner
 
 ::
 
-   print(f"Name: {name}")  
-   print(f"Phone: {phone}")  
-   print(f"Email: {email}")  
+   print(f"Name: {name}")
+   print(f"Phone: {phone}")
+   print(f"Email: {email}")
 
 Works even with incomplete data
 ===============================
@@ -1270,13 +1273,13 @@ Works even with incomplete data
 
 ::
 
-   if inventory[item] < quantity:  
-       print(f"Error: Not enough {item}. Only {inventory[item]} available.")  
-       return False  
-    
-   inventory[item] -= quantity  
-   print(f"Sold {quantity} {item}")  
-   return True  
+   if inventory[item] < quantity:
+       print(f"Error: Not enough {item}. Only {inventory[item]} available.")
+       return False
+
+   inventory[item] -= quantity
+   print(f"Sold {quantity} {item}")
+   return True
 
 | sell_item(inventory, “apples”, 10) # Success
 | sell_item(inventory, “grapes”, 5) # Error: not in inventory
@@ -1317,12 +1320,12 @@ When you need both (most common)
 
 ::
 
-   for field in required_fields:  
-       if field not in student:  
-           print(f"Error: Missing required field '{field}'")  
-           return False  
-    
-   return True  
+   for field in required_fields:
+       if field not in student:
+           print(f"Error: Missing required field '{field}'")
+           return False
+
+   return True
 
 Valid student
 =============
@@ -1349,25 +1352,25 @@ Invalid student - missing major
 
 ::
 
-   # Convert text to lowercase and split into words  
-   words = text.lower().split()  
-    
-   # Create empty dictionary for counts  
-   frequency = {}  
-    
-   # Count each word  
-   for word in words:  
-       # Remove common punctuation  
-       word = word.strip('.,!?;:"')  
-        
-       # Skip empty strings  
-       if not word:  
-           continue  
-        
-       # Update count using get() with default value  
-       frequency[word] = frequency.get(word, 0) + 1  
-    
-   return frequency  
+   # Convert text to lowercase and split into words
+   words = text.lower().split()
+
+   # Create empty dictionary for counts
+   frequency = {}
+
+   # Count each word
+   for word in words:
+       # Remove common punctuation
+       word = word.strip('.,!?;:"')
+
+       # Skip empty strings
+       if not word:
+           continue
+
+       # Update count using get() with default value
+       frequency[word] = frequency.get(word, 0) + 1
+
+   return frequency
 
 Test the function
 =================
@@ -1405,10 +1408,10 @@ Display results
 
 ::
 
-   grade_book[name] = []  
-   print(f"Added student: {name}")  
+   grade_book[name] = []
+   print(f"Added student: {name}")
 
-   return True  
+   return True
 
 | def add_grade(grade_book, name, grade):
 | “““Add a grade for a student”“”
@@ -1418,13 +1421,13 @@ Display results
 
 ::
 
-   if grade < 0 or grade > 100:  
-       print("Grade must be between 0 and 100")  
-       return False  
-    
-   grade_book[name].append(grade)  
-   print(f"Added grade {grade} for {name}")  
-   return True  
+   if grade < 0 or grade > 100:
+       print("Grade must be between 0 and 100")
+       return False
+
+   grade_book[name].append(grade)
+   print(f"Added grade {grade} for {name}")
+   return True
 
 | def calculate_average(grade_book, name):
 | “““Calculate a student’s average grade”“”
@@ -1433,11 +1436,11 @@ Display results
 
 ::
 
-   grades = grade_book[name]  
-   if len(grades) == 0:  
-       return 0.0  
-    
-   return sum(grades) / len(grades)  
+   grades = grade_book[name]
+   if len(grades) == 0:
+       return 0.0
+
+   return sum(grades) / len(grades)
 
 | def display_grade_book(grade_book):
 | “““Display all students and their grades”“”
@@ -1447,17 +1450,17 @@ Display results
 
 ::
 
-   print("\n" + "=" * 50)  
-   print("GRADE BOOK")  
-   print("=" * 50)  
-    
-   for name, grades in grade_book.items():  
-       average = calculate_average(grade_book, name)  
-       print(f"\nStudent: {name}")  
-       print(f"Grades: {grades}")  
-       print(f"Average: {average:.1f}")  
-    
-   print("=" * 50)  
+   print("\n" + "=" * 50)
+   print("GRADE BOOK")
+   print("=" * 50)
+
+   for name, grades in grade_book.items():
+       average = calculate_average(grade_book, name)
+       print(f"\nStudent: {name}")
+       print(f"Grades: {grades}")
+       print(f"Average: {average:.1f}")
+
+   print("=" * 50)
 
 Using the grade book system
 ===========================
@@ -1519,29 +1522,29 @@ Display results
 
 ::
 
-   current_qty = inventory[name]["quantity"]  
-   if current_qty < quantity:  
-       print(f"Error: Not enough {name}. Only {current_qty} available.")  
-       return False  
-    
-   inventory[name]["quantity"] -= quantity  
-   total_price = quantity * inventory[name]["price"]  
-   print(f"Sold {quantity} {name} for ${total_price:.2f}")  
-   return True  
+   current_qty = inventory[name]["quantity"]
+   if current_qty < quantity:
+       print(f"Error: Not enough {name}. Only {current_qty} available.")
+       return False
+
+   inventory[name]["quantity"] -= quantity
+   total_price = quantity * inventory[name]["price"]
+   print(f"Sold {quantity} {name} for ${total_price:.2f}")
+   return True
 
 def restock_product(inventory, name, quantity):
 
 ::
 
-   """Add more quantity to an existing product"""  
-   if name not in inventory:  
-       print(f"Error: {name} not found in inventory")  
-       return False  
-    
-   inventory[name]["quantity"] += quantity  
-   new_qty = inventory[name]["quantity"]  
-   print(f"Restocked {name}. New quantity: {new_qty}")  
-   return True  
+   """Add more quantity to an existing product"""
+   if name not in inventory:
+       print(f"Error: {name} not found in inventory")
+       return False
+
+   inventory[name]["quantity"] += quantity
+   new_qty = inventory[name]["quantity"]
+   print(f"Restocked {name}. New quantity: {new_qty}")
+   return True
 
 | def get_inventory_value(inventory):
 | “““Calculate total value of all inventory”“”
@@ -1558,21 +1561,21 @@ def restock_product(inventory, name, quantity):
 
 ::
 
-   print("\n" + "=" * 70)  
-   print("INVENTORY REPORT")  
-   print("=" * 70)  
+   print("\n" + "=" * 70)
+   print("INVENTORY REPORT")
+   print("=" * 70)
 
-   print(f"{'Product':<20} {'Price':<12} {'Quantity':<10} {'Value':<12}")  
-   print("-" * 70)  
-    
-   for name, info in inventory.items():  
-       value = info["price"] * info["quantity"]  
-       print(f"{name:<20} ${info['price']:<11.2f} {info['quantity']:<10} ${value:<11.2f}")  
-    
-   print("-" * 70)  
-   total_value = get_inventory_value(inventory)  
-   print(f"Total Inventory Value: ${total_value:.2f}")  
-   print("=" * 70)  
+   print(f"{'Product':<20} {'Price':<12} {'Quantity':<10} {'Value':<12}")
+   print("-" * 70)
+
+   for name, info in inventory.items():
+       value = info["price"] * info["quantity"]
+       print(f"{name:<20} ${info['price']:<11.2f} {info['quantity']:<10} ${value:<11.2f}")
+
+   print("-" * 70)
+   total_value = get_inventory_value(inventory)
+   print(f"Total Inventory Value: ${total_value:.2f}")
+   print("=" * 70)
 
 Using the inventory system
 ==========================
@@ -1627,31 +1630,31 @@ Display updated inventory
 | Write a program that:
 | 1. Creates an empty contacts dictionary
 
-2.  Adds at least 3 contacts with keys: name and phone number
-3.  Allows looking up a phone number by name
-4.  Handles the case where a name doesn’t exist
-5.  Displays all contacts
+1.  Adds at least 3 contacts with keys: name and phone number
+2.  Allows looking up a phone number by name
+3.  Handles the case where a name doesn’t exist
+4.  Displays all contacts
     Exercise 3: Grade Calculator
     Create a dictionary where keys are student names and values are
     lists of test scores. Write functions to:
-6.  Add a new student
-7.  Add a test score for a student
-8.  Calculate a student’s average
-9.  Find the student with the highest average
-10. Display all students and their averages
+5.  Add a new student
+6.  Add a test score for a student
+7.  Calculate a student’s average
+8.  Find the student with the highest average
+9.  Display all students and their averages
     Exercise 4: Word Counter
     Write a program that:
-11. Takes a sentence as input
-12. Counts how many times each word appears
-13. Displays the results sorted by frequency (highest first)
-14. Handles punctuation appropriately
+10. Takes a sentence as input
+11. Counts how many times each word appears
+12. Displays the results sorted by frequency (highest first)
+13. Handles punctuation appropriately
     Exercise 5: Menu System
     Create a restaurant menu using a dictionary where keys are item
     names and values are prices. Write a program that:
-15. Displays the menu
-16. Lets users add items to an order (with quantities)
-17. Calculates the total cost
-18. Displays the final bill
+14. Displays the menu
+15. Lets users add items to an order (with quantities)
+16. Calculates the total cost
+17. Displays the final bill
 
 Chapter Summary
 
@@ -1824,8 +1827,8 @@ start recognizing situations where they’re the perfect tool for the job.
 
 ::
 
-   if grades[name] < 80:  
-       del grades[name]  # RuntimeError: dictionary changed size during iteration  
+   if grades[name] < 80:
+       del grades[name]  # RuntimeError: dictionary changed size during iteration
 
 | Solution: Create a list of keys to remove first, then remove them in a
   separate loop.
@@ -1867,15 +1870,15 @@ Good - consistent snake_case
 
 ::
 
-   Expected dictionary structure:  
-   { 
-       "name": str,  
-       "age": int,  
-       "major": str,  
-       "gpa": float  
-   } 
-   """ 
-   # function code here  
+   Expected dictionary structure:
+   {
+       "name": str,
+       "age": int,
+       "major": str,
+       "gpa": float
+   }
+   """
+   # function code here
 
 4. Use meaningful variable names
    # Poor

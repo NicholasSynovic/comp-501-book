@@ -1,5 +1,6 @@
+===========================
 Lesson 17: Files & Strings
-==========================
+===========================
 
 | Owner: Saban, Michael
 | Reviewer: Jason for Saban, Michael

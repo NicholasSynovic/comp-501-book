@@ -1,5 +1,6 @@
+=================================
 Lesson 6: More Function Practice
-================================
+=================================
 
 **Reviewer:** Synovic, Nicholas SN **Owner:** Bisharat, Arslan BA
 
@@ -24,16 +25,16 @@ them if they are satisfied.
    2     total = 0
    3     for rating in ratings:
    4         total = total + rating
-   5     
+   5
    6     average = total / len(ratings)
-   7     
+   7
    8     if average >= 4.0:
    9         feedback = "Very satisfied"
    10     elif average >= 3.0:
    11         feedback = "Satisfied"
    12     else:
    13         feedback = "Needs improvement"
-   14     
+   14
    15 return average feedback
    Python
 
@@ -162,11 +163,11 @@ student names with their numeric grades.
    1 def create_report(name, scores):
    2     total = sum(scores)
    3     average = total / len(scores)
-   4     
+   4
    5     report = "Student: " + name + "\n"
    6     report = report + "Total Points: " + str(total
    7     report = report + "Average: " + str(round(aver
-   8     
+   8
    9     if average >= 90:
    10         grade = "A"
    11     elif average >= 80:
@@ -219,7 +220,7 @@ Some parameters are strings. Some are numbers. Some are lists.
 
    1 def student_summary(name, student_id, courses, gpa)
    2     summary = "Name: " + name + "\n"
-   3     summary = summary + "ID: " + str(student_id) + 
+   3     summary = summary + "ID: " + str(student_id) +
    4     summary = summary + "Enrolled in " + str(len(cou
    5     summary = summary + "GPA: " + str(gpa)
    6     return summary
@@ -321,10 +322,10 @@ both cases.
    2     email = "To: " + recipient + "\n"
    3     email = email + "Subject: " + subject + "\n"
    4     email = email + "Program: " + program + "\n"
-   5     
+   5
    6     if urgent:
    7         email = email + "PRIORITY: HIGH\n"
-   8     
+   8
    9     email = email + "\nEmail sent successfully."
    10     return email
    Python
@@ -340,7 +341,7 @@ Nicholas sends different types of emails.
 
 ::
 
-   1 email1 = send_email("Matt Hyatt", "Research Meeting 
+   1 email1 = send_email("Matt Hyatt", "Research Meeting
    2 print(email1)
    3 print()
    4
@@ -464,7 +465,7 @@ functions for each task.
    11             major_counts[major] = major_counts[majo
    12         else:
    13             major_counts[major] = 1
-   14     
+   14
    15 most popular = ""
    Python
 
@@ -560,13 +561,13 @@ expects numbers but sometimes gets text.
    1 def calculate_average_safe(scores):
    2     if not scores:
    3         return "Error: Empty list"
-   4     
+   4
    5     total = 0
    6     for score in scores:
    7         if not isinstance(score, (int, float)):
    8             return "Error: All scores must be numbe
    9         total = total + score
-   10     
+   10
    11     return total / len(scores)
    Python
 
@@ -614,13 +615,13 @@ problem.
    2     print("Debug: homework =", homework)
    3     print("Debug: midterm =", midterm)
    4     print("Debug: final =", final)
-   5     
+   5
    6     homework_avg = sum(homework) / len(homework)
    7     print("Debug: homework_avg =", homework_avg)
-   8     
-   9     weighted = homework_avg * 0.3 + midterm * 0.3 + 
+   8
+   9     weighted = homework_avg * 0.3 + midterm * 0.3 +
    10     print("Debug: weighted =", weighted)
-   11     
+   11
    12     return weighted
 
 This function calculates a final grade using weighted averages. To help
@@ -807,7 +808,7 @@ Output:
    4
    5 After good function:
    6 Original: ['Ihab Al shaikhli', 'Arslan Bisharat']
-   7 Result: ['Ihab Al shaikhli', 'Arslan Bisharat', 
+   7 Result: ['Ihab Al shaikhli', 'Arslan Bisharat',
    'Behnaz Eslami']
 
 The bad function changed the original list. Now original has Behnaz in
@@ -848,9 +849,9 @@ Good example:
    2     homework_weighted = homework * 2
    3     midterm_weighted = midterm * 3
    4     final_weighted = final * 4
-   5     
+   5
    6     total_score = homework_weighted + midterm_weight
-   7     
+   7
    8     threshold = 100
    9     return total_score > threshold
    Python
@@ -960,7 +961,7 @@ Review (11/16/2025)
    4
    Timing Time estimates per section a
 
-   realistic and sum to ~60-75 
+   realistic and sum to ~60-75
 
 
 
@@ -979,7 +980,7 @@ Review (11/16/2025)
    Avoid vague verbs lik
 
    2
-   Alignment Objectives align with 
+   Alignment Objectives align with
 
    assessments.
 

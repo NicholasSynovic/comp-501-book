@@ -1,5 +1,6 @@
+=======================
 Lesson 10: While Loops
-======================
+=======================
 
 **Owner:** `Luce, Jason <https://www.luce.com>`__
 

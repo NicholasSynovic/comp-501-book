@@ -1,5 +1,6 @@
+=============================
 Lesson 5: Intro to Functions
-============================
+=============================
 
 **Reviewer:** Synovic, Nicholas SN **Owner:** Bisharat, Arslan BA
 
@@ -72,7 +73,7 @@ Thiruvathukal shows him how.
 ::
 
    1 def greet():
-   2     print("Welcome to Loyola University Chicago CS 
+   2     print("Welcome to Loyola University Chicago CS
    Program!")
    Python
    Python
@@ -143,7 +144,7 @@ Arslan wants to mention that in the message.
 ::
 
    1 def greet(name, student_type):
-   2     print("Hello,", name, "welcome to Loyola as 
+   2     print("Hello,", name, "welcome to Loyola as
    a", student_type, "student!")
    Python
    Python
@@ -162,7 +163,7 @@ The student type comes second.
 
    1 Hello, Behnaz Eslami welcome to Loyola as a first ye
    Python
-   2 Hello, Matt Hyatt welcome to Loyola as a advanced 
+   2 Hello, Matt Hyatt welcome to Loyola as a advanced
    CS student!
    Python
 
@@ -266,7 +267,7 @@ other calculations.
 
 ::
 
-   1 total = add_with_return(5, 3) + add_with_return(2, 
+   1 total = add_with_return(5, 3) + add_with_return(2,
    2 print(total)
 
 **Output:**
@@ -288,7 +289,7 @@ function to still work. He can set a default value.
 ::
 
    1 def greet(name, student_type="CS"):
-   2     print("Hello,", name, "welcome as a", 
+   2     print("Hello,", name, "welcome as a",
    student_type, "student!")
 
 If you do not provide student_type the function uses “CS” automatically.
@@ -472,15 +473,15 @@ student applications.
 
    1 def process_application(name, gpa, research_area):
    2     print("Processing application for", name)
-   3     
+   3
    4     grant = calculate_grant(gpa)
    5     print("Research grant amount:", grant)
-   6     
+   6
    7     if gpa >= 3.5:
    8         status = "Accepted"
    9     else:
    10         status = "Pending Review"
-   11     
+   11
    12     print("Status:", status)
    13     print("Research Area:", research_area)
    14     print()
@@ -495,7 +496,7 @@ Now he processes several applications for the CS students.
 
    1 process_application("Jason Luce", 3.9, "Machine Lea
    2 process_application("Erik Pautsch", 3.7, "Software E
-   3 process_application("Mujtaba Nazari", 3.4, "Data 
+   3 process_application("Mujtaba Nazari", 3.4, "Data
    Science")
 
 **Output:**

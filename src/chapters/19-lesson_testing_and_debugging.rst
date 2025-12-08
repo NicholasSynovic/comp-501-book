@@ -1,5 +1,6 @@
+===============================
 Lesson 19: Testing & Debugging
-==============================
+===============================
 
 Owner: Rushikesh Shirsat
 
@@ -87,7 +88,7 @@ Example:
 .. code:: python
 
    # math_utils.py
-   def multiply(a, b): 
+   def multiply(a, b):
        return a * b
 
 Test:
