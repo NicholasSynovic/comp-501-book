@@ -1,5 +1,6 @@
+==============================
 Lesson 1: Intro to the Course
-=============================
+==============================
 
 **Owner:** SN Synovic, Nicholas Irakliotis, Leo Thiruvathukal, George
 

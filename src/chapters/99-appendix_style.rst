@@ -1,5 +1,6 @@
-[cite_start]Appendix B: Style [cite: 3]
-=======================================
+==================
+Appendix B: Style
+==================
 
 .. code:: toml
 

@@ -1,4 +1,6 @@
+=================================
 Lesson 21: Lists of Dictionaries
+=================================
 
 | Owner: Nazari, Mujtaba
 | Reviewer: Al Shaikhli, Ihab
@@ -242,26 +244,26 @@ This code will fail
 
 ::
 
-   This function ensures every student has all required fields  
-   with the correct data types. It also provides a default value  
-   for the major field in case it is not specified.  
-    
-   Parameters:  
-       name (str): The student's full name  
-       age (int): The student's age in years  
-       gpa (float): The student's grade point average (0.0 -4.0)  
-       major (str): The student's declared major (default: "Undecided")  
-    
-   Returns:  
-       dict: A dictionary representing the student with all required fields  
+   This function ensures every student has all required fields
+   with the correct data types. It also provides a default value
+   for the major field in case it is not specified.
 
-   """ 
-   return {  
-       "name": name,  
-       "age": age,  
-       "gpa": gpa,  
-       "major": major  
-   } 
+   Parameters:
+       name (str): The student's full name
+       age (int): The student's age in years
+       gpa (float): The student's grade point average (0.0 -4.0)
+       major (str): The student's declared major (default: "Undecided")
+
+   Returns:
+       dict: A dictionary representing the student with all required fields
+
+   """
+   return {
+       "name": name,
+       "age": age,
+       "gpa": gpa,
+       "major": major
+   }
 
 Create students using the factory function
 ==========================================
@@ -296,35 +298,35 @@ All students now have the exact same structure
 
 ::
 
-   Raises:  
-       TypeError: If parameters have incorrect types  
-       ValueError: If parameter values are invalid  
-   """ 
-   # Validate types  
-   if not isinstance(name, str):  
-       raise TypeError("Student name must be a string")  
-   if not isinstance(age, int):  
-       raise TypeError("Student age must be an integer")  
-   if not isinstance(gpa, (int, float)):  
-       raise TypeError("Student GPA must be a number")  
-   if not isinstance(major, str):  
-       raise TypeError("Student major must be a string")  
-    
-   # Validate values  
-   if age < 0 or age > 120:  
-       raise ValueError("Student age must be between 0 and 120")  
-   if gpa < 0.0 or gpa > 4.0:  
-       raise ValueError("Student GPA must be between 0.0 and 4.0")  
-   if not name.strip():  
-       raise ValueError("Student name cannot be empty")  
-    
-   return {  
-       "name": name,  
-       "age": age,  
+   Raises:
+       TypeError: If parameters have incorrect types
+       ValueError: If parameter values are invalid
+   """
+   # Validate types
+   if not isinstance(name, str):
+       raise TypeError("Student name must be a string")
+   if not isinstance(age, int):
+       raise TypeError("Student age must be an integer")
+   if not isinstance(gpa, (int, float)):
+       raise TypeError("Student GPA must be a number")
+   if not isinstance(major, str):
+       raise TypeError("Student major must be a string")
 
-       "gpa": gpa,  
-       "major": major  
-   } 
+   # Validate values
+   if age < 0 or age > 120:
+       raise ValueError("Student age must be between 0 and 120")
+   if gpa < 0.0 or gpa > 4.0:
+       raise ValueError("Student GPA must be between 0.0 and 4.0")
+   if not name.strip():
+       raise ValueError("Student name cannot be empty")
+
+   return {
+       "name": name,
+       "age": age,
+
+       "gpa": gpa,
+       "major": major
+   }
 
 Try to create an invalid student
 ================================
@@ -395,14 +397,14 @@ Collect student data from user input
 
 ::
 
-   age = int(input("Enter student age: "))  
+   age = int(input("Enter student age: "))
 
-   major = input("Enter student major: ")  
-   gpa = float(input("Enter student GPA: "))  
-    
-   # Create and add the student record  
-   student = {"name": name, "age": age, "major": major, "gpa": gpa}  
-   students.append(student)  
+   major = input("Enter student major: ")
+   gpa = float(input("Enter student GPA: "))
+
+   # Create and add the student record
+   student = {"name": name, "age": age, "major": major, "gpa": gpa}
+   students.append(student)
 
 | print(f”Collected information for {len(students)} students”)
 | Method 3: Using a Factory Function
@@ -566,7 +568,7 @@ Iterate through all students
 
 ::
 
-   print(f"{student['name']}: {status}")  
+   print(f"{student['name']}: {status}")
 
 Output:
 =======
@@ -667,20 +669,20 @@ print(f”Total students: {len(students)}“) # Output: Total students: 3
 
 ::
 
-   Parameters:  
-       students (list): The list of student dictionaries  
-       name (str): Student's name  
-       age (int): Student's age  
-       major (str): Student's major  
-       gpa (float): Student's GPA  
-    
-   Returns:  
-       dict: The newly created student dictionary  
-   """ 
-   new_student = create_student(name, age, major, gpa)  
-   students.append(new_student)  
-   print(f"Added student: {name}")  
-   return new_student  
+   Parameters:
+       students (list): The list of student dictionaries
+       name (str): Student's name
+       age (int): Student's age
+       major (str): Student's major
+       gpa (float): Student's GPA
+
+   Returns:
+       dict: The newly created student dictionary
+   """
+   new_student = create_student(name, age, major, gpa)
+   students.append(new_student)
+   print(f"Added student: {name}")
+   return new_student
 
 Use the function
 ================
@@ -724,32 +726,32 @@ Insert a student at a specific position (index 2, which will be the third positi
 
 ::
 
-   Parameters:  
-       students (list): List of student dictionaries to display  
+   Parameters:
+       students (list): List of student dictionaries to display
 
-   """ 
-   if not students:  
-       print("No students to display")  
-       return  
-    
-   # Print header  
-   print("\n" + "=" * 70)  
-   print("STUDENT ROSTER")  
-   print("=" * 70)  
-   print(f"{'Name':<25} {'Age':<5} {'Major':<20} {'GPA':<5}")  
-   print("-" * 70)  
-    
-   # Print each student  
-   for student in students:  
-       print(f"{student['name']:<25} {student['age']:<5} {student['major']:<20} 
+   """
+   if not students:
+       print("No students to display")
+       return
+
+   # Print header
+   print("\n" + "=" * 70)
+   print("STUDENT ROSTER")
+   print("=" * 70)
+   print(f"{'Name':<25} {'Age':<5} {'Major':<20} {'GPA':<5}")
+   print("-" * 70)
+
+   # Print each student
+   for student in students:
+       print(f"{student['name']:<25} {student['age']:<5} {student['major']:<20}
 
 {student[‘gpa’]:<5}“)
 
 ::
 
-   print("=" * 70)  
-   print(f"Total students: {len(students)}")  
-   print()  
+   print("=" * 70)
+   print(f"Total students: {len(students)}")
+   print()
 
 Test the function
 =================
@@ -777,23 +779,23 @@ Test the function
 
 ::
 
-   Parameters:  
-       students (list): List of student dictionaries  
-       name (str): Name to search for (case -insensitive)  
-    
-   Returns:  
-       dict or None: The student dictionary if found, None otherwise  
-   """ 
-   # Convert search name to lowercase for case -insensitive comparison  
-   name_lower = name.lower()  
-    
-   for student in students:  
-       if student['name'].lower() == name_lower:  
+   Parameters:
+       students (list): List of student dictionaries
+       name (str): Name to search for (case -insensitive)
 
-           return student  
-    
-   # If we get here, the student was not found  
-   return None  
+   Returns:
+       dict or None: The student dictionary if found, None otherwise
+   """
+   # Convert search name to lowercase for case -insensitive comparison
+   name_lower = name.lower()
+
+   for student in students:
+       if student['name'].lower() == name_lower:
+
+           return student
+
+   # If we get here, the student was not found
+   return None
 
 .. _test-the-function-1:
 
@@ -828,7 +830,7 @@ Try to find a non -existent student
 
 ::
 
-   print("Student 'David Lee' not found")  
+   print("Student 'David Lee' not found")
 
 Output: Student ‘David Lee’ not found
 =====================================
@@ -846,27 +848,27 @@ Output: Student ‘David Lee’ not found
 
 ::
 
-   This assumes students have an 'id' field in their dictionary.  
-   """ 
-   for student in students:  
-       if student.get('id') == student_id:  
-           return student  
-   return None  
+   This assumes students have an 'id' field in their dictionary.
+   """
+   for student in students:
+       if student.get('id') == student_id:
+           return student
+   return None
 
 | def find_students_by_major(students, major):
 | ““” Find all students in a specific major.
 
 ::
 
-   Returns:  
-       list: A list of student dictionaries matching the major  
-   """ 
-   matching_students = []  
+   Returns:
+       list: A list of student dictionaries matching the major
+   """
+   matching_students = []
 
-   for student in students:  
-       if student['major'].lower() == major.lower():  
-           matching_students.append(student)  
-   return matching_students  
+   for student in students:
+       if student['major'].lower() == major.lower():
+           matching_students.append(student)
+   return matching_students
 
 Test finding by major
 =====================
@@ -906,28 +908,28 @@ Test finding by major
 
 ::
 
-   Parameters:  
-       students (list): List of student dictionaries  
-       name (str): Name of the student to update  
-       new_gpa (float): New GPA value  
-    
-   Returns:  
-       bool: True if student was found and updated, False otherwise  
-   """ 
-   # Find the student  
-   for student in students:  
-       if student['name'].lower() == name.lower():  
-           # Store old value for reporting  
-           old_gpa = student['gpa']  
-           # Update the GPA  
-           student['gpa'] = new_gpa  
-           print(f"Updated {name}'s GPA from {old_gpa} to {new_gpa}")  
-           return True  
-    
+   Parameters:
+       students (list): List of student dictionaries
+       name (str): Name of the student to update
+       new_gpa (float): New GPA value
 
-   # Student not found  
-   print(f"Student '{name}' not found")  
-   return False  
+   Returns:
+       bool: True if student was found and updated, False otherwise
+   """
+   # Find the student
+   for student in students:
+       if student['name'].lower() == name.lower():
+           # Store old value for reporting
+           old_gpa = student['gpa']
+           # Update the GPA
+           student['gpa'] = new_gpa
+           print(f"Updated {name}'s GPA from {old_gpa} to {new_gpa}")
+           return True
+
+
+   # Student not found
+   print(f"Student '{name}' not found")
+   return False
 
 .. _test-the-function-2:
 
@@ -975,34 +977,34 @@ Try to update a non -existent student
 
 ::
 
-   Parameters:  
-       students (list): List of student dictionaries  
-       name (str): Name of the student to update  
-       **updates: Keyword arguments representing fields to update  
-    
-   Returns:  
-       bool: True if student was found and updated, False otherwise  
-    
-   Example:  
-       update_student_info(students, "Alice", age=21, major="Data Science")  
-   """ 
-   # Find the student  
-   for student in students:  
-       if student['name'].lower() == name.lower():  
-           # Update each field provided in the updates  
-           for field, value in updates.items():  
-               if field in student:  
-                   student[field] = value  
-               else:  
+   Parameters:
+       students (list): List of student dictionaries
+       name (str): Name of the student to update
+       **updates: Keyword arguments representing fields to update
 
-                   print(f"Warning: Student does not have field '{field}', skipping")  
-            
-           print(f"Updated {name}'s information")  
-           return True  
-    
-   # Student not found  
-   print(f"Student '{name}' not found")  
-   return False  
+   Returns:
+       bool: True if student was found and updated, False otherwise
+
+   Example:
+       update_student_info(students, "Alice", age=21, major="Data Science")
+   """
+   # Find the student
+   for student in students:
+       if student['name'].lower() == name.lower():
+           # Update each field provided in the updates
+           for field, value in updates.items():
+               if field in student:
+                   student[field] = value
+               else:
+
+                   print(f"Warning: Student does not have field '{field}', skipping")
+
+           print(f"Updated {name}'s information")
+           return True
+
+   # Student not found
+   print(f"Student '{name}' not found")
+   return False
 
 Test updating multiple fields
 =============================
@@ -1069,8 +1071,8 @@ Updated Bob Martinez’s information
 
 ::
 
-   print(f"Student '{name}' not found")  
-   return False  
+   print(f"Student '{name}' not found")
+   return False
 
 | However, this flexibility comes at a cost: your students could end up
   with inconsistent structures if you are not careful. In most cases,
@@ -1087,25 +1089,25 @@ Updated Bob Martinez’s information
 
 ::
 
-   Parameters:  
-       students (list): List of student dictionaries  
-       name (str): Name of the student to remove  
-    
-   Returns:  
-       bool: True if student was found and removed, False otherwise  
-   """ 
-   # Iterate with enumerate to get both index and value  
-   for index, student in enumerate(students):  
-       if student['name'].lower() == name.lower():  
-           # Remove the student using pop() with the index  
-           removed_student = students.pop(index)  
-           print(f"Removed student: {removed_student['name']}")  
-           return True  
+   Parameters:
+       students (list): List of student dictionaries
+       name (str): Name of the student to remove
+
+   Returns:
+       bool: True if student was found and removed, False otherwise
+   """
+   # Iterate with enumerate to get both index and value
+   for index, student in enumerate(students):
+       if student['name'].lower() == name.lower():
+           # Remove the student using pop() with the index
+           removed_student = students.pop(index)
+           print(f"Removed student: {removed_student['name']}")
+           return True
 
 
-   # Student not found  
-   print(f"Student '{name}' not found")  
-   return False  
+   # Student not found
+   print(f"Student '{name}' not found")
+   return False
 
 .. _test-the-function-3:
 
@@ -1165,24 +1167,24 @@ Verify Bob is gone
 
 ::
 
-   Parameters:  
-       students (list): List of student dictionaries (modified in place)  
-       field (str): The field name to check  
-       value: The value to match for deletion  
-    
-   Returns:  
-       int: Number of students removed  
+   Parameters:
+       students (list): List of student dictionaries (modified in place)
+       field (str): The field name to check
+       value: The value to match for deletion
 
-   """ 
-   initial_count = len(students)  
-    
-   # Create a new list excluding students that match the criteria  
-   # The [:] slice assignment replaces the list contents in place  
-   students[:] = [s for s in students if s.get(field) != value]  
-    
-   removed_count = initial_count - len(students)  
-   print(f"Removed {removed_count} student(s)")  
-   return removed_count  
+   Returns:
+       int: Number of students removed
+
+   """
+   initial_count = len(students)
+
+   # Create a new list excluding students that match the criteria
+   # The [:] slice assignment replaces the list contents in place
+   students[:] = [s for s in students if s.get(field) != value]
+
+   removed_count = initial_count - len(students)
+   print(f"Removed {removed_count} student(s)")
+   return removed_count
 
 .. _test-the-function-4:
 
@@ -1246,8 +1248,8 @@ print(f”Remaining count: {len(students)}“) # Output: Remaining count: 2
 
 ::
 
-   {"name": "Diana Lee", "age": 19, "major": "Physics", "gpa": 3.7},  
-   {"name": "Eve Taylor", "age": 20, "major": "Mathematics", "gpa": 3.5}  
+   {"name": "Diana Lee", "age": 19, "major": "Physics", "gpa": 3.7},
+   {"name": "Eve Taylor", "age": 20, "major": "Mathematics", "gpa": 3.5}
 
 ]
 
@@ -1418,41 +1420,41 @@ Create a dictionary mapping names to GPAs for all students
 
 ::
 
-   Parameters:  
-       students (list): List of student dictionaries to search  
-       name (str, optional): Search for name containing this string (case -insensitive)  
-       major (str, optional): Filter by exact major (case -insensitive)  
+   Parameters:
+       students (list): List of student dictionaries to search
+       name (str, optional): Search for name containing this string (case -insensitive)
+       major (str, optional): Filter by exact major (case -insensitive)
 
-       min_gpa (float, optional): Filter for GPA >= this value  
-       max_age (int, optional): Filter for age <= this value  
-    
-   Returns:  
-       list: List of student dictionaries matching all specified criteria  
-    
-   Examples:  
-       search_students(students, major="Computer Science")  
-       search_students(students, min_gpa=3.7, max_age=20)  
-       search_students(students, name="John")  
-   """ 
-   results = students  # Start with all students  
-    
-   # Apply each filter if the parameter was provided  
-   if name is not None:  
-       name_lower = name.lower()  
-       results = [s for s in results if name_lower in s['name'].lower()]  
-    
-   if major is not None:  
-       major_lower = major.lower()  
-       results = [s for s in results if s['major'].lower() == major_lower]  
-    
-   if min_gpa is not None:  
-       results = [s for s in results if s['gpa'] >= min_gpa]  
-    
-   if max_age is not None:  
+       min_gpa (float, optional): Filter for GPA >= this value
+       max_age (int, optional): Filter for age <= this value
 
-       results = [s for s in results if s['age'] <= max_age]  
-    
-   return results  
+   Returns:
+       list: List of student dictionaries matching all specified criteria
+
+   Examples:
+       search_students(students, major="Computer Science")
+       search_students(students, min_gpa=3.7, max_age=20)
+       search_students(students, name="John")
+   """
+   results = students  # Start with all students
+
+   # Apply each filter if the parameter was provided
+   if name is not None:
+       name_lower = name.lower()
+       results = [s for s in results if name_lower in s['name'].lower()]
+
+   if major is not None:
+       major_lower = major.lower()
+       results = [s for s in results if s['major'].lower() == major_lower]
+
+   if min_gpa is not None:
+       results = [s for s in results if s['gpa'] >= min_gpa]
+
+   if max_age is not None:
+
+       results = [s for s in results if s['age'] <= max_age]
+
+   return results
 
 Test the search function
 ========================
@@ -1593,7 +1595,7 @@ Sort by name (alphabetically)
 
 ::
 
-   print(f"  {student['name']}: {student['age']} years old")  
+   print(f"  {student['name']}: {student['age']} years old")
 
 .. _output-3:
 
@@ -1638,7 +1640,7 @@ Sort by GPA (lowest first)
 
 ::
 
-   print(f"  {student['name']}: {student['gpa']}")  
+   print(f"  {student['name']}: {student['gpa']}")
 
 .. _output-4:
 
@@ -1686,10 +1688,10 @@ Sort by age (oldest first)
 
 ::
 
-   {"name": "Alice Johnson", "major": "Computer Science", "gpa": 3.8},  
-   {"name": "Bob Martinez", "major": "Computer Science", "gpa": 3.9},  
-   {"name": "Diana Lee", "major": "Physics", "gpa": 3.7},  
-   {"name": "Eve Taylor", "major": "Mathematics", "gpa": 3.6}  
+   {"name": "Alice Johnson", "major": "Computer Science", "gpa": 3.8},
+   {"name": "Bob Martinez", "major": "Computer Science", "gpa": 3.9},
+   {"name": "Diana Lee", "major": "Physics", "gpa": 3.7},
+   {"name": "Eve Taylor", "major": "Mathematics", "gpa": 3.6}
 
 ]
 
@@ -1824,8 +1826,8 @@ sorted() creates a NEW list, leaving the original unchanged
 
 ::
 
-   {"name": "Eve Taylor", "major": "Mathematics", "gpa": 3.5},  
-   {"name": "Frank Wilson", "major": "Computer Science", "gpa": 3.7}  
+   {"name": "Eve Taylor", "major": "Mathematics", "gpa": 3.5},
+   {"name": "Frank Wilson", "major": "Computer Science", "gpa": 3.7}
 
 ]
 
@@ -1896,7 +1898,7 @@ Physics:
 
 ::
 
-   {"name": "Frank Wilson", "major": "Computer Science", "year": 2, "gpa": 3.7}  
+   {"name": "Frank Wilson", "major": "Computer Science", "year": 2, "gpa": 3.7}
 
 ]
 
@@ -2101,12 +2103,12 @@ students = [
 
 ::
 
-   {"name": "Alice Johnson", "major": "Computer Science", "gpa": 3.8},  
-   {"name": "Bob Martinez", "major": "Mathematics", "gpa": 3.6},  
-   {"name": "Charlie Davis", "major": "Computer Science", "gpa": 3.9},  
-   {"name": "Diana Lee", "major": "Physics", "gpa": 3.7},  
-   {"name": "Eve Taylor", "major": "Mathematics", "gpa": 3.5},  
-   {"name": "Frank Wilson", "major": "Computer Science", "gpa": 3.7}  
+   {"name": "Alice Johnson", "major": "Computer Science", "gpa": 3.8},
+   {"name": "Bob Martinez", "major": "Mathematics", "gpa": 3.6},
+   {"name": "Charlie Davis", "major": "Computer Science", "gpa": 3.9},
+   {"name": "Diana Lee", "major": "Physics", "gpa": 3.7},
+   {"name": "Eve Taylor", "major": "Mathematics", "gpa": 3.5},
+   {"name": "Frank Wilson", "major": "Computer Science", "gpa": 3.7}
 
 ]
 
@@ -2260,10 +2262,10 @@ Equivalent JSON (as a string)
 
 ::
 
-   "age": 20,  
-   "major": "Computer Science",  
-   "gpa": 3.8,  
-   "courses": ["Data Structures", "Algorithms", "Databases"]  
+   "age": 20,
+   "major": "Computer Science",
+   "gpa": 3.8,
+   "courses": ["Data Structures", "Algorithms", "Databases"]
 
 }
 
@@ -2374,9 +2376,9 @@ The file now contains properly formatted JSON
 
 ::
 
-   # Display the loaded data  
-   for student in loaded_students:  
-       print(f"  - {student['name']}: {student['major']}, GPA {student['gpa']}")  
+   # Display the loaded data
+   for student in loaded_students:
+       print(f"  - {student['name']}: {student['major']}, GPA {student['gpa']}")
 
 .. _output-5:
 
@@ -2429,23 +2431,23 @@ Invalid JSON examples
 
 ::
 
-   Returns:  
-       The parsed JSON data, or None if an error occurred  
-   """ 
-   try: 
-       with open(filename, "r") as file:  
-           return json.load(file)  
-   except FileNotFoundError:  
-       print(f"Error: File '{filename}' not found")  
-       return None  
-   except json.JSONDecodeError as e:  
-       print(f"Error: Invalid JSON in '{filename}'")  
+   Returns:
+       The parsed JSON data, or None if an error occurred
+   """
+   try:
+       with open(filename, "r") as file:
+           return json.load(file)
+   except FileNotFoundError:
+       print(f"Error: File '{filename}' not found")
+       return None
+   except json.JSONDecodeError as e:
+       print(f"Error: Invalid JSON in '{filename}'")
 
-       print(f"  {e}")  
-       return None  
-   except Exception as e:  
-       print(f"Unexpected error reading '{filename}': {e}")  
-       return None  
+       print(f"  {e}")
+       return None
+   except Exception as e:
+       print(f"Unexpected error reading '{filename}': {e}")
+       return None
 
 Use the safe function
 =====================
@@ -2477,28 +2479,28 @@ Use the safe function
 
 ::
 
-   "name": "Tech University",  
-   "established": 1990,  
-   "departments": [  
-       { 
-           "name": "Computer Science",  
-           "head": "Dr. Smith",  
-           "students": [  
-               {"name": "Alice Johnson", "year": 2, "gpa": 3.8},  
-               {"name": "Bob Martinez", "year": 3, "gpa": 3.6}  
-           ], 
-           "courses": ["Intro to Programming", "Data Structures", "Algorithms"]  
-       }, 
-       { 
-           "name": "Mathematics",  
-           "head": "Dr. Johnson",  
-           "students": [  
-               {"name": "Charlie Davis", "year": 2, "gpa": 3.9},  
-               {"name": "Diana Lee", "year": 1, "gpa": 3.7}  
-           ], 
-           "courses": ["Calculus", "Linear Algebra", "Statistics"]  
-       } 
-   ] 
+   "name": "Tech University",
+   "established": 1990,
+   "departments": [
+       {
+           "name": "Computer Science",
+           "head": "Dr. Smith",
+           "students": [
+               {"name": "Alice Johnson", "year": 2, "gpa": 3.8},
+               {"name": "Bob Martinez", "year": 3, "gpa": 3.6}
+           ],
+           "courses": ["Intro to Programming", "Data Structures", "Algorithms"]
+       },
+       {
+           "name": "Mathematics",
+           "head": "Dr. Johnson",
+           "students": [
+               {"name": "Charlie Davis", "year": 2, "gpa": 3.9},
+               {"name": "Diana Lee", "year": 1, "gpa": 3.7}
+           ],
+           "courses": ["Calculus", "Linear Algebra", "Statistics"]
+       }
+   ]
 
 | } This structure represents a university containing a list of
   departments, where each department dictionary contains a list of
@@ -2623,25 +2625,25 @@ Safe access using .get()
 
 ::
 
-   Example:  
-       safe_nested_get(university, 'departments', 0, 'students', 1, 'name')  
-    
-   Parameters:  
-       data: The data structure to navigate  
+   Example:
+       safe_nested_get(university, 'departments', 0, 'students', 1, 'name')
 
-       *keys: Series of keys/indexes to follow  
-       default: Value to return if path doesn't exist  
-    
-   Returns:  
-       The value at the specified path, or default if path doesn't exist  
-   """ 
-   result = data  
-   for key in keys:  
-       try: 
-           result = result[key]  
-       except (KeyError, IndexError, TypeError):  
-           return default  
-   return result  
+   Parameters:
+       data: The data structure to navigate
+
+       *keys: Series of keys/indexes to follow
+       default: Value to return if path doesn't exist
+
+   Returns:
+       The value at the specified path, or default if path doesn't exist
+   """
+   result = data
+   for key in keys:
+       try:
+           result = result[key]
+       except (KeyError, IndexError, TypeError):
+           return default
+   return result
 
 Test safe access
 ================
@@ -2686,34 +2688,34 @@ Access with wrong type
 
 ::
 
-   Each student record will include department information.  
-    
-   Parameters:  
-       university_data: Nested university dictionary  
-    
-   Returns:  
-       list: Flat list of student dictionaries with department info  
-   """ 
-   all_students = []  
+   Each student record will include department information.
+
+   Parameters:
+       university_data: Nested university dictionary
+
+   Returns:
+       list: Flat list of student dictionaries with department info
+   """
+   all_students = []
 
 
-   for department in university_data.get('departments', []):  
-       dept_name = department.get('name', 'Unknown')  
-       dept_head = department.get('head', 'Unknown')  
-        
-       for student in department.get('students', []):  
-           # Create a flattened record combining student and department data  
-           flat_student = {  
-               'student_name': student.get('name', 'Unknown'),  
-               'year': student.get('year', 0),  
-               'gpa': student.get('gpa', 0.0),  
-               'department': dept_name,  
-               'department_head': dept_head,  
-               'university': university_data.get('name', 'Unknown')  
-           } 
-           all_students.append(flat_student)  
-    
-   return all_students  
+   for department in university_data.get('departments', []):
+       dept_name = department.get('name', 'Unknown')
+       dept_head = department.get('head', 'Unknown')
+
+       for student in department.get('students', []):
+           # Create a flattened record combining student and department data
+           flat_student = {
+               'student_name': student.get('name', 'Unknown'),
+               'year': student.get('year', 0),
+               'gpa': student.get('gpa', 0.0),
+               'department': dept_name,
+               'department_head': dept_head,
+               'university': university_data.get('name', 'Unknown')
+           }
+           all_students.append(flat_student)
+
+   return all_students
 
 Flatten the data
 ================
@@ -2754,28 +2756,28 @@ Diana Lee - Mathematics - Year 1 - GPA 3.7
 
 ::
 
-   Parameters:  
-       flat_students: List of flat student dictionaries  
-    
-   Returns:  
-       dict: Dictionary mapping department names to lists of students  
-   """ 
-   from collections import defaultdict  
-    
-   grouped = defaultdict(list)  
-    
+   Parameters:
+       flat_students: List of flat student dictionaries
 
-   for student in flat_students:  
-       department = student.get('department', 'Unknown')  
-       # Create a simplified student record without redundant department info  
-       simple_student = {  
-           'name': student['student_name'],  
-           'year': student['year'],  
-           'gpa': student['gpa']  
-       } 
-       grouped[department].append(simple_student)  
-    
-   return dict(grouped)  
+   Returns:
+       dict: Dictionary mapping department names to lists of students
+   """
+   from collections import defaultdict
+
+   grouped = defaultdict(list)
+
+
+   for student in flat_students:
+       department = student.get('department', 'Unknown')
+       # Create a simplified student record without redundant department info
+       simple_student = {
+           'name': student['student_name'],
+           'year': student['year'],
+           'gpa': student['gpa']
+       }
+       grouped[department].append(simple_student)
+
+   return dict(grouped)
 
 Restructure the flattened data
 ==============================
@@ -2813,40 +2815,40 @@ Diana Lee - Year 1
 
 ::
 
-   Helps you understand complex JSON/dictionary structures.  
-    
-   Parameters:  
-       data: The data structure to visualize  
-       indent: Current indentation level (used internally)  
-       max_depth: Maximum depth to print (prevents infinite recursion)  
-   """ 
-   if indent >= max_depth:  
-       print("  " * indent + "... (max depth reached)")  
-       return  
-    
-   spaces = "  " * indent  
-    
-   if isinstance(data, dict):  
-       for key, value in data.items():  
-           if isinstance(value, (dict, list)):  
+   Helps you understand complex JSON/dictionary structures.
 
-               print(f"{spaces}{key}:")  
-               print_structure(value, indent + 1, max_depth)  
-           else:  
-               print(f"{spaces}{key}: {type(value).__name__} = {value}")  
-    
-   elif isinstance(data, list):  
-       if len(data) == 0:  
-           print(f"{spaces}(empty list)")  
-       else:  
-           print(f"{spaces}[{len(data)} items]")  
-           # Show first item as example  
-           if len(data) > 0:  
-               print(f"{spaces}Example item [0]:")  
-               print_structure(data[0], indent + 1, max_depth)  
-    
-   else:  
-       print(f"{spaces}{type(data).__name__} = {data}")  
+   Parameters:
+       data: The data structure to visualize
+       indent: Current indentation level (used internally)
+       max_depth: Maximum depth to print (prevents infinite recursion)
+   """
+   if indent >= max_depth:
+       print("  " * indent + "... (max depth reached)")
+       return
+
+   spaces = "  " * indent
+
+   if isinstance(data, dict):
+       for key, value in data.items():
+           if isinstance(value, (dict, list)):
+
+               print(f"{spaces}{key}:")
+               print_structure(value, indent + 1, max_depth)
+           else:
+               print(f"{spaces}{key}: {type(value).__name__} = {value}")
+
+   elif isinstance(data, list):
+       if len(data) == 0:
+           print(f"{spaces}(empty list)")
+       else:
+           print(f"{spaces}[{len(data)} items]")
+           # Show first item as example
+           if len(data) > 0:
+               print(f"{spaces}Example item [0]:")
+               print_structure(data[0], indent + 1, max_depth)
+
+   else:
+       print(f"{spaces}{type(data).__name__} = {data}")
 
 Visualize the university structure
 ==================================
@@ -2915,61 +2917,61 @@ Invalid students (various problems)
 
 ::
 
-   Parameters:  
-       student: Dictionary to validate  
-    
-   Returns:  
-       tuple: (is_valid, error_message)  
-              is_valid is True if valid, False otherwise  
-              error_message describes the problem, or "Valid" if no problems  
-   """ 
-   # Define required fields and their types  
+   Parameters:
+       student: Dictionary to validate
 
-   required_fields = {  
-       "name": str,  
-       "age": int,  
-       "major": str,  
-       "gpa": (int, float)  # Allow both int and float for GPA  
-   } 
-    
-   # Check that all required fields exist  
-   for field, expected_type in required_fields.items():  
-       if field not in student:  
-           return False, f"Missing required field: '{field}'"  
-        
-       # Check type  
-       if not isinstance(student[field], expected_type):  
-           actual_type = type(student[field]).__name__  
-           if isinstance(expected_type, tuple):  
-               type_names = " or ".join(t.__name__ for t in expected_type)  
-               expected_name = type_names  
-           else:  
-               expected_name = expected_type.__name__  
-           return False, f"Field '{field}' has wrong type. Expected {expected_name}, got 
+   Returns:
+       tuple: (is_valid, error_message)
+              is_valid is True if valid, False otherwise
+              error_message describes the problem, or "Valid" if no problems
+   """
+   # Define required fields and their types
+
+   required_fields = {
+       "name": str,
+       "age": int,
+       "major": str,
+       "gpa": (int, float)  # Allow both int and float for GPA
+   }
+
+   # Check that all required fields exist
+   for field, expected_type in required_fields.items():
+       if field not in student:
+           return False, f"Missing required field: '{field}'"
+
+       # Check type
+       if not isinstance(student[field], expected_type):
+           actual_type = type(student[field]).__name__
+           if isinstance(expected_type, tuple):
+               type_names = " or ".join(t.__name__ for t in expected_type)
+               expected_name = type_names
+           else:
+               expected_name = expected_type.__name__
+           return False, f"Field '{field}' has wrong type. Expected {expected_name}, got
 
 {actual_type}”
 
 ::
 
-   # Validate name is not empty  
-   if not student["name"].strip():  
-       return False, "Name cannot be empty"  
+   # Validate name is not empty
+   if not student["name"].strip():
+       return False, "Name cannot be empty"
 
 
-   # Validate age is in reasonable range  
-   if student["age"] < 16 or student["age"] > 100:  
-       return False, f"Age must be between 16 and 100, got {student['age']}"  
-    
-   # Validate major is not empty  
-   if not student["major"].strip():  
-       return False, "Major cannot be empty"  
-    
-   # Validate GPA is in valid range  
-   if student["gpa"] < 0.0 or student["gpa"] > 4.0:  
-       return False, f"GPA must be between 0.0 and 4.0, got {student['gpa']}"  
-    
-   # If we get here, the student is valid  
-   return True, "Valid"  
+   # Validate age is in reasonable range
+   if student["age"] < 16 or student["age"] > 100:
+       return False, f"Age must be between 16 and 100, got {student['age']}"
+
+   # Validate major is not empty
+   if not student["major"].strip():
+       return False, "Major cannot be empty"
+
+   # Validate GPA is in valid range
+   if student["gpa"] < 0.0 or student["gpa"] > 4.0:
+       return False, f"GPA must be between 0.0 and 4.0, got {student['gpa']}"
+
+   # If we get here, the student is valid
+   return True, "Valid"
 
 Test validation with various inputs
 ===================================
@@ -3014,24 +3016,24 @@ Test validation with various inputs
 
 ::
 
-   Parameters:  
-       students: List of student dictionaries  
-    
-   Returns:  
-       tuple: (all_valid, validation_report)  
-              all_valid is True if all students are valid  
-              validation_report is a list of (index, is_valid, message) tuples  
-   """ 
-   report = []  
-   all_valid = True  
-    
-   for index, student in enumerate(students):  
-       is_valid, message = validate_student(student)  
-       report.append((index, is_valid, message))  
-       if not is_valid:  
-           all_valid = False  
-    
-   return all_valid, report  
+   Parameters:
+       students: List of student dictionaries
+
+   Returns:
+       tuple: (all_valid, validation_report)
+              all_valid is True if all students are valid
+              validation_report is a list of (index, is_valid, message) tuples
+   """
+   report = []
+   all_valid = True
+
+   for index, student in enumerate(students):
+       is_valid, message = validate_student(student)
+       report.append((index, is_valid, message))
+       if not is_valid:
+           all_valid = False
+
+   return all_valid, report
 
 Test collection validation
 ==========================
@@ -3073,61 +3075,61 @@ all_valid, report = validate_student_collection(students)
 
 ::
 
-   Attempts to fix common data quality issues:  
-   - Convert string numbers to actual numbers  
-   - Trim whitespace from strings  
-   - Normalize text casing  
-    
-   Parameters:  
-       raw_student: Dictionary that might need cleaning  
-    
-   Returns:  
-       tuple: (cleaned_student, warnings)  
-              cleaned_student is the cleaned dictionary  
-              warnings is a list of issues that were fixed  
-   """ 
-   cleaned = {}  
-   warnings = []  
-    
-   # Clean name  
-   if "name" in raw_student:  
-       cleaned["name"] = raw_student["name"].strip()  
-       if raw_student["name"] != cleaned["name"]:  
-           warnings.append("Trimmed whitespace from name")  
-    
-   # Clean and convert age  
-   if "age" in raw_student:  
-       if isinstance(raw_student["age"], str):  
+   Attempts to fix common data quality issues:
+   - Convert string numbers to actual numbers
+   - Trim whitespace from strings
+   - Normalize text casing
 
-           try: 
-               cleaned["age"] = int(raw_student["age"])  
-               warnings.append("Converted age from string to integer")  
-           except ValueError:  
-               cleaned["age"] = raw_student["age"]  # Keep as -is, will fail validation  
-               warnings.append(f"Could not convert age '{raw_student['age']}' to integer")  
-       else:  
-           cleaned["age"] = raw_student["age"]  
-    
-   # Clean major  
-   if "major" in raw_student:  
-       cleaned["major"] = raw_student["major"].strip()  
-       if raw_student["major"] != cleaned["major"]:  
-           warnings.append("Trimmed whitespace from major")  
-    
-   # Clean and convert GPA  
-   if "gpa" in raw_student:  
-       if isinstance(raw_student["gpa"], str):  
-           try: 
-               cleaned["gpa"] = float(raw_student["gpa"])  
-               warnings.append("Converted GPA from string to float")  
-           except ValueError:  
-               cleaned["gpa"] = raw_student["gpa"]  # Keep as -is, will fail validation  
-               warnings.append(f"Could not convert GPA '{raw_student['gpa']}' to float")  
-       else:  
-           cleaned["gpa"] = raw_student["gpa"]  
+   Parameters:
+       raw_student: Dictionary that might need cleaning
+
+   Returns:
+       tuple: (cleaned_student, warnings)
+              cleaned_student is the cleaned dictionary
+              warnings is a list of issues that were fixed
+   """
+   cleaned = {}
+   warnings = []
+
+   # Clean name
+   if "name" in raw_student:
+       cleaned["name"] = raw_student["name"].strip()
+       if raw_student["name"] != cleaned["name"]:
+           warnings.append("Trimmed whitespace from name")
+
+   # Clean and convert age
+   if "age" in raw_student:
+       if isinstance(raw_student["age"], str):
+
+           try:
+               cleaned["age"] = int(raw_student["age"])
+               warnings.append("Converted age from string to integer")
+           except ValueError:
+               cleaned["age"] = raw_student["age"]  # Keep as -is, will fail validation
+               warnings.append(f"Could not convert age '{raw_student['age']}' to integer")
+       else:
+           cleaned["age"] = raw_student["age"]
+
+   # Clean major
+   if "major" in raw_student:
+       cleaned["major"] = raw_student["major"].strip()
+       if raw_student["major"] != cleaned["major"]:
+           warnings.append("Trimmed whitespace from major")
+
+   # Clean and convert GPA
+   if "gpa" in raw_student:
+       if isinstance(raw_student["gpa"], str):
+           try:
+               cleaned["gpa"] = float(raw_student["gpa"])
+               warnings.append("Converted GPA from string to float")
+           except ValueError:
+               cleaned["gpa"] = raw_student["gpa"]  # Keep as -is, will fail validation
+               warnings.append(f"Could not convert GPA '{raw_student['gpa']}' to float")
+       else:
+           cleaned["gpa"] = raw_student["gpa"]
 
 
-   return cleaned, warnings  
+   return cleaned, warnings
 
 Test data cleaning
 ==================
@@ -3160,29 +3162,29 @@ Test data cleaning
 
 ::
 
-   """ 
-   Import a student record with cleaning and validation.  
-    
-   Returns:  
-       tuple: (student, success, messages)  
-              student is the cleaned dictionary (or None if invalid)  
-              success is True if import succeeded  
-              messages is a list of informational/error messages  
-   """ 
-   messages = []  
-    
-   # Step 1: Clean the data  
-   cleaned, clean_warnings = clean_student_data(raw_student)  
-   messages.extend(clean_warnings)  
-    
-   # Step 2: Validate the cleaned data  
-   is_valid, validation_msg = validate_student(cleaned)  
-   messages.append(f"Validation: {validation_msg}")  
-    
-   if is_valid:  
-       return cleaned, True, messages  
-   else:  
-       return None, False, messages  
+   """
+   Import a student record with cleaning and validation.
+
+   Returns:
+       tuple: (student, success, messages)
+              student is the cleaned dictionary (or None if invalid)
+              success is True if import succeeded
+              messages is a list of informational/error messages
+   """
+   messages = []
+
+   # Step 1: Clean the data
+   cleaned, clean_warnings = clean_student_data(raw_student)
+   messages.extend(clean_warnings)
+
+   # Step 2: Validate the cleaned data
+   is_valid, validation_msg = validate_student(cleaned)
+   messages.append(f"Validation: {validation_msg}")
+
+   if is_valid:
+       return cleaned, True, messages
+   else:
+       return None, False, messages
 
 Test safe import
 ================
@@ -3191,9 +3193,9 @@ test_records = [
 
 ::
 
-   {"name": "  Alice  ", "age": "20", "major": "CS", "gpa": "3.8"},  
-   {"name": "Bob", "age": "invalid", "major": "Math", "gpa": "3.6"},  
-   {"name": "", "age": "20", "major": "Physics", "gpa": "3.7"},  
+   {"name": "  Alice  ", "age": "20", "major": "CS", "gpa": "3.8"},
+   {"name": "Bob", "age": "invalid", "major": "Math", "gpa": "3.6"},
+   {"name": "", "age": "20", "major": "Physics", "gpa": "3.7"},
 
 ]
 
@@ -3204,16 +3206,16 @@ test_records = [
 
 ::
 
-   if success:  
-       successfully_imported.append(student)  
-       print(f"✓ Successfully imported: {student['name']}")  
-   else:  
-       print(f"✗ Failed to import: {raw}")  
-    
-   if messages:  
-       for msg in messages:  
-           print(f"  {msg}")  
-   print()  
+   if success:
+       successfully_imported.append(student)
+       print(f"✓ Successfully imported: {student['name']}")
+   else:
+       print(f"✗ Failed to import: {raw}")
+
+   if messages:
+       for msg in messages:
+           print(f"  {msg}")
+   print()
 
 | print(f”:raw-latex:`\nSuccessfully `imported
   {len(successfully_imported)} out of {len(test_records)} records”)
@@ -3296,33 +3298,33 @@ You have to examine the keys to figure it out
 
 ::
 
-   def __init__(self, name, gpa):  
-       """Initialize a new student"""  
-       self.name = name  
-       self.gpa = gpa  
-       self.courses = []  
-    
-   def add_course(self, course_name):  
-       """Add a course to the student's schedule"""  
-       self.courses.append(course_name)  
-    
-   def calculate_status(self):  
-       """Determine academic status"""  
-       if self.gpa >= 3.5:  
-           return "Dean's List"  
-       return "Good Standing"  
-    
-   def update_gpa(self, new_gpa):  
-       """Update GPA with validation"""  
-       if 0.0 <= new_gpa <= 4.0:  
-           self.gpa = new_gpa  
-       else:  
-           raise ValueError("GPA must be between 0.0 and 4.0")  
-    
+   def __init__(self, name, gpa):
+       """Initialize a new student"""
+       self.name = name
+       self.gpa = gpa
+       self.courses = []
 
-   def display(self):  
-       """Display student information"""  
-       print(f"{self.name}: {self.calculate_status()}")  
+   def add_course(self, course_name):
+       """Add a course to the student's schedule"""
+       self.courses.append(course_name)
+
+   def calculate_status(self):
+       """Determine academic status"""
+       if self.gpa >= 3.5:
+           return "Dean's List"
+       return "Good Standing"
+
+   def update_gpa(self, new_gpa):
+       """Update GPA with validation"""
+       if 0.0 <= new_gpa <= 4.0:
+           self.gpa = new_gpa
+       else:
+           raise ValueError("GPA must be between 0.0 and 4.0")
+
+
+   def display(self):
+       """Display student information"""
+       print(f"{self.name}: {self.calculate_status()}")
 
 Using the object -oriented version
 ==================================
@@ -3580,8 +3582,8 @@ with open(‘students.json’) as f:
 
 ::
 
-   students = json.load(f)  
-    
+   students = json.load(f)
+
 
 Immediately using the data without validation
 =============================================
@@ -3897,7 +3899,7 @@ End of Chapter 21
   slightly restructured for better flow or consistency (for example,
   addressing a duplicated topic and aligning section titles with
   content).
-| 
+|
 | :root {
 | –accent: #464feb;
 | –timeline-ln: linear-gradient(to bottom, transparent 0%, #b0beff 15%,
@@ -3919,11 +3921,11 @@ End of Chapter 21
 
 ::
 
-   @media (prefers -color-scheme: dark) {  
-       :root {  
-           --accent: #7385ff;  
+   @media (prefers -color-scheme: dark) {
+       :root {
+           --accent: #7385ff;
 
-           --timeline-ln: linear-gradient(to bottom, transparent 0%, transparent 3%, #6264a7 
+           --timeline-ln: linear-gradient(to bottom, transparent 0%, transparent 3%, #6264a7
 
 | 30%, #6264a7 50%, transparent 97%, transparent 100%);
 | –timeline-border: #424242;
@@ -3938,221 +3940,221 @@ End of Chapter 21
 
 ::
 
-   @media (prefers -contrast: more),  
-   (forced-colors: active) {  
-       :root {  
-           --accent: ActiveText;  
-           --timeline-ln: ActiveText;  
-           --timeline-border: Canvas;  
-           --bg-card: Canvas;  
-           --bg-hover: Canvas;  
-           --text-title: CanvasText;  
-           --text-sub: CanvasText;  
-           --shadow: 0 2px 10px Canvas;  
-           --hover-shadow: 0 4px 14px Canvas;  
-           --border: ButtonBorder;  
+   @media (prefers -contrast: more),
+   (forced-colors: active) {
+       :root {
+           --accent: ActiveText;
+           --timeline-ln: ActiveText;
+           --timeline-border: Canvas;
+           --bg-card: Canvas;
+           --bg-hover: Canvas;
+           --text-title: CanvasText;
+           --text-sub: CanvasText;
+           --shadow: 0 2px 10px Canvas;
+           --hover-shadow: 0 4px 14px Canvas;
+           --border: ButtonBorder;
 
-       } 
-   } 
+       }
+   }
 
-   .insights-container {  
-       display: grid;  
-       grid-template -columns: repeat(2,minmax(240px,1fr));  
-       padding: 0px 16px 0px 16px;  
-       gap: 16px;  
-       margin: 0 0;  
-       font-family: var( --font);  
-   } 
+   .insights-container {
+       display: grid;
+       grid-template -columns: repeat(2,minmax(240px,1fr));
+       padding: 0px 16px 0px 16px;
+       gap: 16px;
+       margin: 0 0;
+       font-family: var( --font);
+   }
 
-   .insight-card:last -child:nth -child(odd){  
-       grid-column: 1 / -1; 
-   } 
+   .insight-card:last -child:nth -child(odd){
+       grid-column: 1 / -1;
+   }
 
-   .insight-card {  
-       background -color: var( --bg-card);  
-       border-radius: var( --radius);  
-       border: 1px solid var( --border);  
-       box-shadow: var( --shadow);  
-       min-width: 220px;  
-       padding: 16px 20px 16px 20px;  
-   } 
+   .insight-card {
+       background -color: var( --bg-card);
+       border-radius: var( --radius);
+       border: 1px solid var( --border);
+       box-shadow: var( --shadow);
+       min-width: 220px;
+       padding: 16px 20px 16px 20px;
+   }
 
-   .insight-card:hover {  
+   .insight-card:hover {
 
-       background -color: var( --bg-hover);  
-   } 
+       background -color: var( --bg-hover);
+   }
 
-   .insight-card h4 {  
-       margin: 0px 0px 8px 0px;  
-       font-size: 1.1rem;  
-       color: var( --text-accent);  
-       font-weight: 600;  
-       display: flex;  
-       align-items: center;  
-       gap: 8px;  
-   } 
+   .insight-card h4 {
+       margin: 0px 0px 8px 0px;
+       font-size: 1.1rem;
+       color: var( --text-accent);
+       font-weight: 600;
+       display: flex;
+       align-items: center;
+       gap: 8px;
+   }
 
-   .insight-card .icon {  
-       display: inline -flex;  
-       align-items: center;  
-       justify-content: center;  
-       width: 20px;  
-       height: 20px;  
-       font-size: 1.1rem;  
-       color: var( --text-accent);  
-   } 
+   .insight-card .icon {
+       display: inline -flex;
+       align-items: center;
+       justify-content: center;
+       width: 20px;
+       height: 20px;
+       font-size: 1.1rem;
+       color: var( --text-accent);
+   }
 
-   .insight-card p {  
-       font-size: 0.92rem;  
-       color: var( --text-sub);  
+   .insight-card p {
+       font-size: 0.92rem;
+       color: var( --text-sub);
 
-       line-height: 1.5;  
-       margin: 0px;  
-       overflow-wrap: var( --overflow-wrap);  
-   } 
+       line-height: 1.5;
+       margin: 0px;
+       overflow-wrap: var( --overflow-wrap);
+   }
 
-   .insight-card p b, .insight -card p strong {  
-       font-weight: 600;  
-   } 
+   .insight-card p b, .insight -card p strong {
+       font-weight: 600;
+   }
 
-   .metrics-container {  
-       display:grid;  
-       grid-template -columns:repeat(2,minmax(210px,1fr));  
-       font-family: var( --font);  
-       padding: 0px 16px 0px 16px;  
-       gap: 16px;  
-   } 
+   .metrics-container {
+       display:grid;
+       grid-template -columns:repeat(2,minmax(210px,1fr));
+       font-family: var( --font);
+       padding: 0px 16px 0px 16px;
+       gap: 16px;
+   }
 
-   .metric-card:last -child:nth -child(odd){  
-       grid-column:1 / -1;  
-   } 
+   .metric-card:last -child:nth -child(odd){
+       grid-column:1 / -1;
+   }
 
-   .metric-card {  
-       flex: 1 1 210px;  
-       padding: 16px;  
-       background -color: var( --bg-card);  
-       border-radius: var( --radius);  
+   .metric-card {
+       flex: 1 1 210px;
+       padding: 16px;
+       background -color: var( --bg-card);
+       border-radius: var( --radius);
 
-       border: 1px solid var( --border);  
-       text-align: center;  
-       display: flex;  
-       flex-direction: column;  
-       gap: 8px;  
-   } 
+       border: 1px solid var( --border);
+       text-align: center;
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+   }
 
-   .metric-card:hover {  
-       background -color: var( --bg-hover);  
-   } 
+   .metric-card:hover {
+       background -color: var( --bg-hover);
+   }
 
-   .metric-card h4 {  
-       margin: 0px;  
-       font-size: 1rem;  
-       color: var( --text-title);  
-       font-weight: 600;  
-   } 
+   .metric-card h4 {
+       margin: 0px;
+       font-size: 1rem;
+       color: var( --text-title);
+       font-weight: 600;
+   }
 
-   .metric-card .metric -card-value {  
-       margin: 0px;  
-       font-size: 1.4rem;  
-       font-weight: 600;  
-       color: var( --text-accent);  
-   } 
+   .metric-card .metric -card-value {
+       margin: 0px;
+       font-size: 1.4rem;
+       font-weight: 600;
+       color: var( --text-accent);
+   }
 
-   .metric-card p {  
+   .metric-card p {
 
-       font-size: 0.85rem;  
-       color: var( --text-sub);  
-       line-height: 1.45;  
-       margin: 0;  
-       overflow-wrap: var( --overflow-wrap);  
-   } 
+       font-size: 0.85rem;
+       color: var( --text-sub);
+       line-height: 1.45;
+       margin: 0;
+       overflow-wrap: var( --overflow-wrap);
+   }
 
-   .timeline -container {  
-       position: relative;  
-       margin: 0 0 0 0;  
-       padding: 0px 16px 0px 56px;  
-       list-style: none;  
-       font-family: var( --font);  
-       font-size: 0.9rem;  
-       color: var( --text-sub);  
-       line-height: 1.4;  
-   } 
+   .timeline -container {
+       position: relative;
+       margin: 0 0 0 0;
+       padding: 0px 16px 0px 56px;
+       list-style: none;
+       font-family: var( --font);
+       font-size: 0.9rem;
+       color: var( --text-sub);
+       line-height: 1.4;
+   }
 
-   .timeline -container::before {  
-       content: "";  
-       position: absolute;  
-       top: 0;  
-       left: calc( -40px + 56px);  
-       width: 2px;  
-       height: 100%;  
-       background: var( --timeline-ln); 
+   .timeline -container::before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: calc( -40px + 56px);
+       width: 2px;
+       height: 100%;
+       background: var( --timeline-ln);
 
-   } 
+   }
 
-   .timeline -container > li {  
-       position: relative;  
-       margin-bottom: 16px;  
-       padding: 16px 20px 16px 20px;  
-       border-radius: var( --radius);  
-       background: var( --bg-card);  
-       border: 1px solid var( --border);  
-   } 
+   .timeline -container > li {
+       position: relative;
+       margin-bottom: 16px;
+       padding: 16px 20px 16px 20px;
+       border-radius: var( --radius);
+       background: var( --bg-card);
+       border: 1px solid var( --border);
+   }
 
-   .timeline -container > li:last -child {  
-       margin-bottom: 0px;  
-   } 
+   .timeline -container > li:last -child {
+       margin-bottom: 0px;
+   }
 
-   .timeline -container > li:hover {  
-       background -color: var( --bg-hover);  
-   } 
+   .timeline -container > li:hover {
+       background -color: var( --bg-hover);
+   }
 
-   .timeline -container > li::before {  
-       content: "";  
-       position: absolute;  
-       top: 18px;  
-       left: -40px;  
-       width: 14px;  
-       height: 14px;  
+   .timeline -container > li::before {
+       content: "";
+       position: absolute;
+       top: 18px;
+       left: -40px;
+       width: 14px;
+       height: 14px;
 
-       background: var( --accent);  
-       border: var( --timeline-border) 2px solid;  
-       border-radius: 50%;  
-       transform: translateX( -50%);  
-       box-shadow: 0px 0px 2px 0px #00000012, 0px 4px 8px 0px #00000014;  
-   } 
+       background: var( --accent);
+       border: var( --timeline-border) 2px solid;
+       border-radius: 50%;
+       transform: translateX( -50%);
+       box-shadow: 0px 0px 2px 0px #00000012, 0px 4px 8px 0px #00000014;
+   }
 
-   .timeline -container > li h4 {  
-       margin: 0 0 5px;  
-       font-size: 1rem;  
-       font-weight: 600;  
-       color: var( --accent);  
-   } 
+   .timeline -container > li h4 {
+       margin: 0 0 5px;
+       font-size: 1rem;
+       font-weight: 600;
+       color: var( --accent);
+   }
 
-   .timeline -container > li h4 em {  
-       margin: 0 0 5px;  
-       font-size: 1rem;  
-       font-weight: 600;  
-       color: var( --accent);  
-       font-style: normal;        
-   } 
+   .timeline -container > li h4 em {
+       margin: 0 0 5px;
+       font-size: 1rem;
+       font-weight: 600;
+       color: var( --accent);
+       font-style: normal;
+   }
 
-   .timeline -container > li * {  
-       margin: 0;  
-       font-size: 0.9rem;  
-       color: var( --text-sub);  
+   .timeline -container > li * {
+       margin: 0;
+       font-size: 0.9rem;
+       color: var( --text-sub);
 
-       line-height: 1.4;  
-   } 
+       line-height: 1.4;
+   }
 
-   .timeline -container > li * b, .timeline -container > li * strong {  
-       font-weight: 600;  
-   } 
-       @media (max -width:600px){  
-     .metrics-container,  
-     .insights-container{  
-       grid-template -columns:1fr;  
-     } 
-   } 
+   .timeline -container > li * b, .timeline -container > li * strong {
+       font-weight: 600;
+   }
+       @media (max -width:600px){
+     .metrics-container,
+     .insights-container{
+       grid-template -columns:1fr;
+     }
+   }
 
 .. raw:: html
 
@@ -4164,8 +4166,8 @@ End of Chapter 21
 
       ::
 
-         <h4>  Code & Formatting Fixes</h4>  
-         <p>Correct HTML -escaped characters in code (e.g. `&lt;`, `&gt;`) and minor typos. 
+         <h4>  Code & Formatting Fixes</h4>
+         <p>Correct HTML -escaped characters in code (e.g. `&lt;`, `&gt;`) and minor typos.
 
       Ensure all Python examples run without errors and display as
       intended.
@@ -4178,8 +4180,8 @@ End of Chapter 21
 
       ::
 
-         <h4>      Clarity & Explanation</h4>  
-         <p>Add brief explanations when introducing new or advanced concepts (like lambda 
+         <h4>      Clarity & Explanation</h4>
+         <p>Add brief explanations when introducing new or advanced concepts (like lambda
 
       functions, defaultdict, etc.). Enhance or simplify wording in a
       few places to be more beginner -friendly.
@@ -4192,9 +4194,9 @@ End of Chapter 21
 
       ::
 
-         <h4>    Structural Tweaks</h4>  
+         <h4>    Structural Tweaks</h4>
 
-         <p>Align section content with headings (e.g. cover "map" or adjust title), merge or 
+         <p>Align section content with headings (e.g. cover "map" or adjust title), merge or
 
       reference overlapping sections to avoid redundancy, and highlight
       important terms or takeaways for emphasis.

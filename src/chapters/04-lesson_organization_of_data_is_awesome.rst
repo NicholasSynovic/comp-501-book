@@ -1,5 +1,6 @@
+==========================================
 Lesson 4: Organization Of Data Is Awesome
-=========================================
+==========================================
 
 **Owner:** SN Synovic, Nicholas **Reviewer:** Luce, Jason
 
@@ -972,10 +973,10 @@ set and back to remove duplicates[cite: 750].
 === ========= === ======
 New Structure Add Remove
 === ========= === ======
-1                 
-2                 
-3                 
-4                 
+1
+2
+3
+4
 === ========= === ======
 
 **7. For Loop & List Comprehension (15 min)** **Concepts:**

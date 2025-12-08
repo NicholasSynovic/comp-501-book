@@ -1,78 +1,79 @@
-.. code:: markdown
+=================================
+Lesson 23: Dictionary Algorithms
+=================================
 
-   # Lesson 23: Dictionary Algorithms
-   Owner: Saban, Michael  
-   Reviewer: Jason for Saban, Michael
+Owner: Saban, Michael
+Reviewer: Jason for Saban, Michael
 
-   Per the Guidelines for Content the following items are missing:  
-   Overview & Introduction  
-   Assessment  
-   Summary  
-   Next steps  
-   Everything else looks fine.
+Per the Guidelines for Content the following items are missing:
+Overview & Introduction
+Assessment
+Summary
+Next steps
+Everything else looks fine.
 
-   ## Learning Objectives
+## Learning Objectives
 
-   - Explain why dictionaries are useful for organizing structured data.  
-   - Apply common dictionary algorithms including:  
-     - counting frequencies  
-     - filtering keys and values  
-     - grouping items  
-     - reversing mappings  
-     - merging dictionaries safely  
-   - Evaluate time complexity of dictionary operations at a basic level.  
-   - Write programs that process lists of dictionaries (records) using these patterns.
+- Explain why dictionaries are useful for organizing structured data.
+- Apply common dictionary algorithms including:
+   - counting frequencies
+   - filtering keys and values
+   - grouping items
+   - reversing mappings
+   - merging dictionaries safely
+- Evaluate time complexity of dictionary operations at a basic level.
+- Write programs that process lists of dictionaries (records) using these patterns.
 
-   ## Introduction
+## Introduction
 
-   Dictionaries are one of Python’s most powerful data structures because they let us map 
-   keys to values with extremely fast lookup times. As programs grow in size and complexity, 
-   dictionaries appear everywhere—representing users, settings, records, statistics, API 
-   responses, databases, and more.
+Dictionaries are one of Python’s most powerful data structures because they let us map
+keys to values with extremely fast lookup times. As programs grow in size and complexity,
+dictionaries appear everywhere—representing users, settings, records, statistics, API
+responses, databases, and more.
 
-   In this lesson, we explore common dictionary algorithms that appear repeatedly in real 
-   software.
+In this lesson, we explore common dictionary algorithms that appear repeatedly in real
+software.
 
-   ---
+---
 
-   # 1. Counting With Dictionaries
+# 1. Counting With Dictionaries
 
-   Counting items is one of the most common uses of dictionaries.
+Counting items is one of the most common uses of dictionaries.
 
-   ## Example: Counting words
+## Example: Counting words
 
-   ```python
-   words = ["apple", "banana", "apple", "pear", "banana", "apple"]
-   counts = {}
+```python
+words = ["apple", "banana", "apple", "pear", "banana", "apple"]
+counts = {}
 
-   for w in words:
-       if w not in counts:
-           counts[w] = 1
-       else:
-           counts[w] += 1
+for w in words:
+      if w not in counts:
+         counts[w] = 1
+      else:
+         counts[w] += 1
 
-   print(counts)
+print(counts)
 
 Output:
 
 ::
 
-   {'apple': 3, 'banana': 2, 'pear': 1}
+{'apple': 3, 'banana': 2, 'pear': 1}
 
 Pattern
 -------
 
 ::
 
-   for item in data:
-       if item not in result:
-           result[item] = 1
-       else:
-           result[item] += 1
+for item in data:
+      if item not in result:
+         result[item] = 1
+      else:
+         result[item] += 1
 
 --------------
 
-2. Filtering Dictionaries
+1. Filtering Dictionaries
 =========================
 
 Often we want to create a new dictionary that contains only certain
@@ -83,49 +84,49 @@ Example: Filter scores above 80
 
 .. code:: python
 
-   scores = {"A": 95, "B": 82, "C": 71, "D": 99}
-   filtered = {}
+scores = {"A": 95, "B": 82, "C": 71, "D": 99}
+filtered = {}
 
-   for k, v in scores.items():
-       if v > 80:
-           filtered[k] = v
+for k, v in scores.items():
+      if v > 80:
+         filtered[k] = v
 
-   print(filtered)
+print(filtered)
 
 Output:
 
 ::
 
-   {'A': 95, 'B': 82, 'D': 99}
+{'A': 95, 'B': 82, 'D': 99}
 
 Source: **Lesson 23 Dictionary_Algorithms.pdf**
 
 .. code:: markdown
 
-   # 3. Grouping With Dictionaries
+# 3. Grouping With Dictionaries
 
-   Grouping means placing items that share a characteristic into lists under a key.
+Grouping means placing items that share a characteristic into lists under a key.
 
-   ## Example: Group words by first letter
+## Example: Group words by first letter
 
-   ```python
-   words = ["apple", "ant", "banana", "berry", "car", "cat"]
+```python
+words = ["apple", "ant", "banana", "berry", "car", "cat"]
 
-   groups = {}
+groups = {}
 
-   for w in words:
-       first = w[0]
-       if first not in groups:
-           groups[first] = []
-       groups[first].append(w)
+for w in words:
+      first = w[0]
+      if first not in groups:
+         groups[first] = []
+      groups[first].append(w)
 
-   print(groups)
+print(groups)
 
 Possible output:
 
 ::
 
-   {'a': ['apple', 'ant'], 'b': ['banana', 'berry'], 'c': ['car', 'cat']}
+{'a': ['apple', 'ant'], 'b': ['banana', 'berry'], 'c': ['car', 'cat']}
 
 .. _pattern-1:
 
@@ -134,11 +135,11 @@ Pattern
 
 ::
 
-   for item in data:
-       key = some_property(item)
-       if key not in groups:
-           groups[key] = []
-       groups[key].append(item)
+for item in data:
+      key = some_property(item)
+      if key not in groups:
+         groups[key] = []
+      groups[key].append(item)
 
 --------------
 
@@ -153,19 +154,19 @@ Example
 
 .. code:: python
 
-   grades = {"A": 90, "B": 80, "C": 70}
-   rev = {}
+grades = {"A": 90, "B": 80, "C": 70}
+rev = {}
 
-   for k, v in grades.items():
-       rev[v] = k
+for k, v in grades.items():
+      rev[v] = k
 
-   print(rev)
+print(rev)
 
 Output:
 
 ::
 
-   {90: 'A', 80: 'B', 70: 'C'}
+{90: 'A', 80: 'B', 70: 'C'}
 
 If values are not unique, one value may overwrite another.
 
@@ -178,17 +179,17 @@ Python 3.9+ supports the merge operator ``|``.
 
 .. code:: python
 
-   a = {"x": 1, "y": 2}
-   b = {"y": 3, "z": 4}
+a = {"x": 1, "y": 2}
+b = {"y": 3, "z": 4}
 
-   c = a | b
-   print(c)
+c = a | b
+print(c)
 
 Output:
 
 ::
 
-   {'x': 1, 'y': 3, 'z': 4}
+{'x': 1, 'y': 3, 'z': 4}
 
 Key rule: if both dictionaries share a key, the right-hand dictionary
 wins.
@@ -197,8 +198,8 @@ Older syntax:
 
 .. code:: python
 
-   c = dict(a)
-   c.update(b)
+c = dict(a)
+c.update(b)
 
 --------------
 
@@ -209,20 +210,20 @@ Using ``.get()`` prevents key errors.
 
 .. code:: python
 
-   config = {"debug": True}
-   print(config.get("mode", "production"))
+config = {"debug": True}
+print(config.get("mode", "production"))
 
 Output:
 
 ::
 
-   production
+production
 
 ``.get()`` syntax:
 
 ::
 
-   dictionary.get(key, default_if_missing)
+dictionary.get(key, default_if_missing)
 
 --------------
 
@@ -233,12 +234,12 @@ Dictionaries can hold other dictionaries.
 
 .. code:: python
 
-   student = {
-       "name": "Alice",
-       "scores": {"math": 90, "science": 85}
-   }
+student = {
+      "name": "Alice",
+      "scores": {"math": 90, "science": 85}
+}
 
-   print(student["scores"]["math"])
+print(student["scores"]["math"])
 
 --------------
 
@@ -250,36 +251,36 @@ etc.).
 
 .. code:: python
 
-   people = [
-       {"name": "Alice", "age": 30},
-       {"name": "Bob", "age": 25},
-       {"name": "Cara", "age": 30}
-   ]
+people = [
+      {"name": "Alice", "age": 30},
+      {"name": "Bob", "age": 25},
+      {"name": "Cara", "age": 30}
+]
 
 Example: Filter
 ---------------
 
 .. code:: python
 
-   results = []
-   for p in people:
-       if p["age"] == 30:
-           results.append(p)
+results = []
+for p in people:
+      if p["age"] == 30:
+         results.append(p)
 
-   print(results)
+print(results)
 
 Example: Group by field
 -----------------------
 
 .. code:: python
 
-   groups = {}
+groups = {}
 
-   for p in people:
-       age = p["age"]
-       if age not in groups:
-           groups[age] = []
-       groups[age].append(p)
+for p in people:
+      age = p["age"]
+      if age not in groups:
+         groups[age] = []
+      groups[age].append(p)
 
 --------------
 
@@ -290,16 +291,16 @@ Count how many records share a value for a certain field.
 
 .. code:: python
 
-   freq = {}
+freq = {}
 
-   for p in people:
-       age = p["age"]
-       if age not in freq:
-           freq[age] = 1
-       else:
-           freq[age] += 1
+for p in people:
+      age = p["age"]
+      if age not in freq:
+         freq[age] = 1
+      else:
+         freq[age] += 1
 
-   print(freq)
+print(freq)
 
 --------------
 
@@ -310,12 +311,12 @@ Convert list → dictionary keyed by unique field.
 
 .. code:: python
 
-   index = {}
+index = {}
 
-   for p in people:
-       index[p["name"]] = p
+for p in people:
+      index[p["name"]] = p
 
-   print(index["Alice"])
+print(index["Alice"])
 
 Useful for fast lookups.
 
@@ -329,24 +330,24 @@ ended. All content is taken verbatim from pages 9–19 of the PDF ().
 
 .. code:: markdown
 
-   # 11. Algorithm: Group by Length (Practice)
+# 11. Algorithm: Group by Length (Practice)
 
-   5. Return the dictionary.  
-   Try to implement this on your own. Test your function with a few lists of words.
+5. Return the dictionary.
+Try to implement this on your own. Test your function with a few lists of words.
 
-   ## Solution (click to expand):
+## Solution (click to expand):
 
-   ```python
-   def group_by_length(words):
-       groups = {}
-       for w in words:
-           length = len(w)
-           # Ensure there's a list for this length
-           groups.setdefault(length, []).append(w)
-       return groups
+```python
+def group_by_length(words):
+      groups = {}
+      for w in words:
+         length = len(w)
+         # Ensure there's a list for this length
+         groups.setdefault(length, []).append(w)
+      return groups
 
-   # Testing the function
-   print(group_by_length(["tea", "to", "apple", "jam", "bag"]))
+# Testing the function
+print(group_by_length(["tea", "to", "apple", "jam", "bag"]))
 
 --------------
 
@@ -429,13 +430,13 @@ Consider the following code snippet:
 
 .. code:: python
 
-   word = "banana"
-   freq = {}
-   for ch in word:
-       if ch not in freq:
-           freq[ch] = 1
-       else:
-           freq[ch] += 1
+word = "banana"
+freq = {}
+for ch in word:
+      if ch not in freq:
+         freq[ch] = 1
+      else:
+         freq[ch] += 1
 
 What is the value of ``freq["a"]`` after the loop completes?
 

@@ -1,5 +1,6 @@
+=======================================
 Lesson 2: Intro to Hardware & Software
-======================================
+=======================================
 
 **Owner:** PE Pautsch, Erik **Reviewer:** Luce, Jason
 

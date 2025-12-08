@@ -1,5 +1,6 @@
-[cite_start]Lesson 3: The Building Blocks [cite: 182]
-=====================================================
+==============================
+Lesson 3: The Building Blocks
+==============================
 
 [cite_start]\ **Reviewer:** SN Synovic, Nicholas [cite: 183]
 [cite_start]\ **SN** Some of the advanced content … [cite: 184]
@@ -673,7 +674,7 @@ logic—checking multiple conditions before allowing an action
    has_documents = True
 
    can_enroll = age >= 18 and is_student and has_documents
-   print(f"Can enroll: {can_enroll}")  
+   print(f"Can enroll: {can_enroll}")
    # Output: Can enroll: True
 
    # Another example: checking membership benefits
@@ -698,7 +699,7 @@ matters: [cite: 493]
    # This won't print because x > 10 is False, so 'and' stops evaluating
    # Python knows that False and anything = False, so it doesn't evaluate the rest
    result1 = x > 10 and print("This won't print")
-   print(f"Result 1: {result1}")  
+   print(f"Result 1: {result1}")
    # Output: Result 1: False
 
    # This will print because x > 0 is True, so 'or' stops evaluating
@@ -881,12 +882,12 @@ data type before processing:
        if not isinstance(value, int):
            print(f"Error: Expected int, got {type(value).__name__}")
            return None
-       
+
        # Validate value constraints
        if value < 0:
            print("Error: Value must be non-negative")
            return None
-       
+
        return value * 2
 
 [cite_start]\ **Accepting Multiple Types** [cite: 522]
@@ -904,7 +905,7 @@ types: [cite: 523]
        if not isinstance(items, (list, tuple)):
            print(f"Error: Expected list or tuple, got {type(items).__name__}")
            return None
-       
+
        # Verify all items inside are numbers
        for item in items:
            if not isinstance(item, (int, float)):
@@ -921,7 +922,7 @@ where conversion fails:
    def get_integer_input(prompt):
        """Get integer from user, handling invalid input"""
        user_input = input(prompt)
-       
+
        try:
            return int(user_input)
        except ValueError:

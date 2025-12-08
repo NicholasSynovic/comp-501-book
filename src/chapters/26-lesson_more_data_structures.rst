@@ -1,62 +1,63 @@
-.. code:: markdown
+================================
+Lesson 26: More Data Structures
+================================
 
-   # Lesson 26: More Data Structures
-   Owner: Hyatt, Matt
+Owner: Hyatt, Matt
 
-   • Sets  
-   • Advanced structures  
-   • Choosing data structures  
+• Sets
+• Advanced structures
+• Choosing data structures
 
-   More Inspiration for 26, that might be relevant...  
-   Sets  
-   Advanced structures  
-   Choosing data structures  
-   Tuples  
-   Stacks (LIFO)  
-   Queues (FIFO)  
-   Deques  
-   Heaps / Priority Queues  
-   Linked Lists (conceptual)  
-   Trees (basic: binary tree, search tree)  
-   Graphs (intro: nodes + edges)  
-   Hash tables (conceptual under the hood of dict/set)  
-   Arrays vs Lists (trade-offs)  
-   Mutability vs Immutability (choosing structures)  
-   Shallow vs Deep Copying  
-   Sorting structures / built-in sorting behavior  
-   Time & space trade-off basics (Big-O for common containers)
+More Inspiration for 26, that might be relevant...
+Sets
+Advanced structures
+Choosing data structures
+Tuples
+Stacks (LIFO)
+Queues (FIFO)
+Deques
+Heaps / Priority Queues
+Linked Lists (conceptual)
+Trees (basic: binary tree, search tree)
+Graphs (intro: nodes + edges)
+Hash tables (conceptual under the hood of dict/set)
+Arrays vs Lists (trade-offs)
+Mutability vs Immutability (choosing structures)
+Shallow vs Deep Copying
+Sorting structures / built-in sorting behavior
+Time & space trade-off basics (Big-O for common containers)
 
-   ## Lesson Objectives
-   By the end of this lesson, students should be able to:
+## Lesson Objectives
+By the end of this lesson, students should be able to:
 
-   • Recognize common advanced data structures and their purposes.  
-   • Identify the strengths and trade-offs of different container types.  
-   • Decide which structure is appropriate for a given problem.  
-   • Understand core ideas like mutability, copying, and performance trade-offs.
+• Recognize common advanced data structures and their purposes.
+• Identify the strengths and trade-offs of different container types.
+• Decide which structure is appropriate for a given problem.
+• Understand core ideas like mutability, copying, and performance trade-offs.
 
-   # 1. Core Idea
+# 1. Core Idea
 
-   Different data structures are built for different patterns of access, storage, and manipulation.  
-   Choosing the right one makes programs simpler, faster, and more predictable.  
-   In this lesson, we explore a range of structures beyond basic lists and dictionaries.
+Different data structures are built for different patterns of access, storage, and manipulation.
+Choosing the right one makes programs simpler, faster, and more predictable.
+In this lesson, we explore a range of structures beyond basic lists and dictionaries.
 
-   ### Key Points
-   • Data structures shape how information is stored and retrieved.  
-   • Each structure has a typical usage pattern.  
-   • No single structure is optimal for every task.
+### Key Points
+• Data structures shape how information is stored and retrieved.
+• Each structure has a typical usage pattern.
+• No single structure is optimal for every task.
 
-   ---
+---
 
-   # 2. Main Concept: Sets
+# 2. Main Concept: Sets
 
-   A set represents an unordered collection of unique items.
+A set represents an unordered collection of unique items.
 
-   Useful when you care about membership (“Is this item present?”) rather than order or duplicates.
+Useful when you care about membership (“Is this item present?”) rather than order or duplicates.
 
-   ### Example:
+### Example:
 
-   ```python
-   unique_values = {1, 2, 3}
+```python
+unique_values = {1, 2, 3}
 
 When to Use
 ~~~~~~~~~~~
@@ -87,57 +88,57 @@ demonstrating how it is used. Add a brief note or tip if needed.
 
 .. code:: markdown
 
-   # Choosing Data Structures
+# Choosing Data Structures
 
-   Below is a guide to help students choose which structure is appropriate for a given
-   situation.
+Below is a guide to help students choose which structure is appropriate for a given
+situation.
 
-   ---
+---
 
-   ### Lists
-   Best for:  
-   • Ordered collections  
-   • Allowing duplicates  
-   • Index-based access  
-   • Iteration  
-   • Frequent appends
+### Lists
+Best for:
+• Ordered collections
+• Allowing duplicates
+• Index-based access
+• Iteration
+• Frequent appends
 
-   ### Tuples
-   Best for:  
-   • Fixed collections  
-   • Ensuring immutability  
-   • Returning multiple values from functions  
-   • Dictionary keys when combined values are needed
+### Tuples
+Best for:
+• Fixed collections
+• Ensuring immutability
+• Returning multiple values from functions
+• Dictionary keys when combined values are needed
 
-   ### Sets
-   Best for:  
-   • Unique items  
-   • Fast membership checks  
-   • Removing duplicates  
-   • Mathematical operations (union, intersection)
+### Sets
+Best for:
+• Unique items
+• Fast membership checks
+• Removing duplicates
+• Mathematical operations (union, intersection)
 
-   ### Dictionaries
-   Best for:  
-   • Key/value lookups  
-   • Fast retrieval by key  
-   • Structured data records  
-   • Counting/grouping
+### Dictionaries
+Best for:
+• Key/value lookups
+• Fast retrieval by key
+• Structured data records
+• Counting/grouping
 
-   ---
+---
 
-   # More Data Structures (Advanced but useful to know)
+# More Data Structures (Advanced but useful to know)
 
-   ### Stacks (LIFO)
-   • Last-In First-Out  
-   • Useful for: undo operations, parsing, backtracking
+### Stacks (LIFO)
+• Last-In First-Out
+• Useful for: undo operations, parsing, backtracking
 
-   Example (using list as stack):
+Example (using list as stack):
 
-   ```python
-   stack = []
-   stack.append(5)
-   stack.append(10)
-   print(stack.pop())   # removes 10
+```python
+stack = []
+stack.append(5)
+stack.append(10)
+print(stack.pop())   # removes 10
 
 --------------
 
@@ -151,11 +152,11 @@ Example:
 
 .. code:: python
 
-   from collections import deque
-   q = deque()
-   q.append("task1")
-   q.append("task2")
-   print(q.popleft())   # 'task1'
+from collections import deque
+q = deque()
+q.append("task1")
+q.append("task2")
+print(q.popleft())   # 'task1'
 
 --------------
 
@@ -169,10 +170,10 @@ Example:
 
 .. code:: python
 
-   from collections import deque
-   d = deque([1, 2, 3])
-   d.appendleft(0)
-   d.append(4)
+from collections import deque
+d = deque([1, 2, 3])
+d.appendleft(0)
+d.append(4)
 
 --------------
 
@@ -186,12 +187,12 @@ Example:
 
 .. code:: python
 
-   import heapq
-   h = []
-   heapq.heappush(h, 5)
-   heapq.heappush(h, 1)
-   heapq.heappush(h, 3)
-   print(heapq.heappop(h))   # 1
+import heapq
+h = []
+heapq.heappush(h, 5)
+heapq.heappush(h, 1)
+heapq.heappush(h, 3)
+print(heapq.heappop(h))   # 1
 
 --------------
 
@@ -247,10 +248,10 @@ Shallow vs Deep Copying
 
 .. code:: python
 
-   import copy
-   a = [1, [2, 3]]
-   b = copy.copy(a)       # shallow
-   c = copy.deepcopy(a)   # deep
+import copy
+a = [1, [2, 3]]
+b = copy.copy(a)       # shallow
+c = copy.deepcopy(a)   # deep
 
 --------------
 
@@ -259,9 +260,9 @@ Sorting
 
 .. code:: python
 
-   numbers = [5, 2, 9]
-   sorted_numbers = sorted(numbers)
-   numbers.sort()
+numbers = [5, 2, 9]
+sorted_numbers = sorted(numbers)
+numbers.sort()
 
 --------------
 
@@ -282,7 +283,7 @@ Practice Problems
 3. Use a queue to simulate tasks.
 4. Convert nested lists into a tree representation.
 5. Identify the best structure for: • login records • GPS routes •
-   search history
+search history
 
 --------------
 
