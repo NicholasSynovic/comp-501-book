@@ -58,5 +58,5 @@ html_theme_options = {
     "use_sidenotes": True,
 }
 html_title = project
-# html_logo = "_static/images/headshot.png"
-# html_favicon = "_static/favicon.png"
+# html_logo = "_static/images/logo.png"
+# html_favicon = "_static/favicon.ico"
